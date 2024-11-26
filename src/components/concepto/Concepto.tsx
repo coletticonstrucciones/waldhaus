@@ -33,10 +33,10 @@ export default function Concepto() {
     };
 
     return (
-        <section className="relative bg-black text-white font-sans">
+        <section className="relative bg-black text-white font-sans pb-28 ">
             <div className="max-w-7xl mx-auto">
                 {/* Título estilizado */}
-                <div className="text-center pt-16 pb-8 mx-auto">
+                <div className="text-center  pb-8 mx-auto">
                     {/* <h1 className="text-[104px] font-light italic tracking-wide" style={{ fontFamily: "'Hello January', cursive" }}>
                         Elegancia austera
                     </h1> */}
