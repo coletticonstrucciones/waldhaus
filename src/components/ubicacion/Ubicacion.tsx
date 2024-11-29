@@ -1,48 +1,22 @@
 'use client';
 /* eslint-disable @next/next/no-img-element */
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
 
 export default function Ubicacion() {
-    const latitudeTarget = -26.82414;
-    const longitudeTarget = -65.22226;
-
-    // Crear valores iniciales usando useMotionValue
-    const latitude = useMotionValue(0);
-    const longitude = useMotionValue(0);
-
-    // Transformar los valores a strings con decimales
-    const latitudeDisplay = useTransform(latitude, (value) =>
-        value.toFixed(5)
-    );
-    const longitudeDisplay = useTransform(longitude, (value) =>
-        value.toFixed(4)
-    );
-
-    useEffect(() => {
-        // Animar latitud con interpolación suave
-        animate(latitude, latitudeTarget, {
-            duration: 3,
-            ease: [0.25, 0.1, 0.25, 1],
-        });
-
-        // Animar longitud con interpolación suave
-        animate(longitude, longitudeTarget, {
-            duration: 4,
-            ease: [0.25, 0.1, 0.25, 1],
-        });
-    }, [latitude, longitude, latitudeTarget, longitudeTarget]);
+    // Coordenadas estáticas
+    const latitude = -26.82414;
+    const longitude = -65.22226;
 
     return (
         <section className="relative text-white font-sans min-h-screen bg-black">
-            {/* Imagen de fondo con superposición */}
-            <div className="absolute inset-0 z-0">
+            {/* Imagen de fondo con degradado */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 to-black">
                 <img
                     src="/cielo-naranja.webp"
                     alt="Fondo ubicación"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/30"></div>
+                {/* Degradado negro */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
             </div>
 
             {/* Contenido principal */}
@@ -58,23 +32,22 @@ export default function Ubicacion() {
                     Ubicación
                 </h2>
 
-                {/* Coordenadas animadas */}
+                {/* Coordenadas estáticas */}
                 <div className="text-center text-[111px] font-light tracking-[5rem] leading-tight mb-12 mt-16">
                     {/* Latitud */}
-                    <motion.div className="block">
-                        {latitudeDisplay}
-                    </motion.div>
+                    <div className="block">
+                        {latitude.toFixed(5)}
+                    </div>
 
                     {/* Longitud */}
-                    <motion.div className="block">
-                        {longitudeDisplay}
-                    </motion.div>
+                    <div className="block">
+                        {longitude.toFixed(4)}
+                    </div>
                     <div className="mt-2 w-16 h-1 bg-white ms-auto mr-36"></div>
-
                 </div>
 
                 {/* Texto en dos columnas */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12  text-sm md:text-base text-gray-200 bg-black p-8  shadow-lg max-w-6xl mx-auto mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm md:text-base text-gray-200 bg-black p-7 shadow-lg max-w-5xl mx-auto mt-16">
                     {/* Primera columna */}
                     <div className="flex flex-col justify-between border-r border-gray-600 pr-6">
                         <p className="leading-relaxed mb-8">
@@ -86,7 +59,7 @@ export default function Ubicacion() {
                     </div>
 
                     {/* Segunda columna */}
-                    <div className="flex flex-col justify-between ">
+                    <div className="flex flex-col justify-between">
                         <p className="leading-relaxed mb-8">
                             Woods Bagot is now established worldwide, with studios in six regions: Southeast Asia, China, Australia & NZ, Europe, the Middle East, and North America.
                         </p>
@@ -96,10 +69,8 @@ export default function Ubicacion() {
                     </div>
                 </div>
 
-
-
                 {/* Video con botón de reproducción */}
-                <div className="relative mt-16 max-w-5xl mx-auto">
+                <div className="relative mt-16 ">
                     <div className="absolute inset-0 flex items-center justify-center z-10">
                         <button className="w-16 h-16 bg-white/70 rounded-full flex items-center justify-center hover:bg-white">
                             <svg
@@ -116,7 +87,7 @@ export default function Ubicacion() {
                         src="URL_DE_TU_VIDEO"
                         poster="URL_DE_LA_IMAGEN_POSTER"
                         controls
-                        className="w-full h-auto object-cover rounded-lg"
+                        className="min-w-full h-[600px] object-cover rounded-lg bg-black"
                     >
                         Tu navegador no soporta la reproducción de videos.
                     </video>
