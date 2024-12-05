@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Unidades() {
   return (
-    <section className="relative text-white font-sans min-h-screen bg-black">
+    <section id="unidades" className="relative text-white font-sans min-h-screen bg-black">
       <div className='px-20 mx-auto'>
         <h2
           className="text-sm md:text-3xl uppercase tracking-[.5em] mb-8 text-center pt-28 pb-16"

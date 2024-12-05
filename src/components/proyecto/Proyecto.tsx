@@ -3,10 +3,10 @@ import React from 'react'
 
 export default function Proyecto() {
     return (
-        <section className="relative text-white font-sans min-h-screen bg-black">
-            <div className='px-20 mx-auto'>
+        <section id="proyecto" className="relative text-white font-sans min-h-screen bg-black">
+            <div className='px-4 sm:px-8 md:px-12 lg:px-20 mx-auto'>
                 <h2
-                    className="text-sm md:text-3xl uppercase tracking-[.5em] mb-8 text-center pt-28 pb-16"
+                    className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
                     style={{
                         fontFamily: "'Helvetica Now', sans-serif",
                         color: "#FFFFFF",
@@ -14,11 +14,19 @@ export default function Proyecto() {
                 >
                     Proyecto
                 </h2>
-                <div className='flex justify-between items-end px-20'>
-                    <img src="/proyecto-portada.png" alt="proyecto" className="w-[800px] aspect-[5/4] object-cover" />
-                    <img src="/maqueta.png" alt="maqueta-colleti" className="w-[500px]  object-cover" />
+                <div className='flex flex-col lg:flex-row justify-between items-center lg:items-end gap-8 px-0 sm:px-4 md:px-8 lg:px-20'>
+                    <img 
+                        src="/proyecto-portada.png" 
+                        alt="proyecto" 
+                        className="w-full lg:w-[60%] xl:w-[800px] aspect-[5/4] object-cover" 
+                    />
+                    <img 
+                        src="/maqueta.png" 
+                        alt="maqueta-colleti" 
+                        className="w-full lg:w-[35%] xl:w-[500px] object-cover" 
+                    />
                 </div>
-                <article className="px-20 py-24 leading-relaxed">
+                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 leading-relaxed space-y-4 text-sm sm:text-base">
                     <p>Waldhaus se desarrolla sobre un terreno irregular.</p>
                     <p>
                         Tiene la particularidad de estar frente a la ruta 339, pero también sobre un
@@ -44,48 +52,54 @@ export default function Proyecto() {
                         probablemente el lugar indicado.
                     </p>
                 </article>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16 px-20">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 sm:mt-12 md:mt-16 px-4 sm:px-8 md:px-12 lg:px-20">
                     {/* Tarjetas de imágenes inferiores */}
-                    <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-center sm:items-start">
                         <img
                             src="/vistas.png"
                             alt="Vistas"
                             className="w-full aspect-[3/4] object-cover"
                         />
-                        <p className="mt-4 text-center text-3xl tracking-widest">vistas</p>
+                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">vistas</p>
                     </div>
-                    <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-center sm:items-start">
                         <img
                             src="/paisajismo.png"
                             alt="Paisajismo"
                             className="w-full aspect-[3/4] object-cover"
                         />
-                        <p className="mt-4 text-center text-3xl tracking-widest">
+                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">
                             paisajismo
                         </p>
                     </div>
-                    <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-center sm:items-start">
                         <img
                             src="/gym-spa.png"
                             alt="Gym & Spa"
                             className="w-full aspect-[3/4] object-cover"
                         />
-                        <p className="mt-4 text-center text-3xl tracking-widest">gym & spa</p>
+                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">gym & spa</p>
                     </div>
-                    <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-center sm:items-start">
                         <img
                             src="/estacionamiento.png"
                             alt="Estacionamiento Subterráneo"
                             className="w-full aspect-[3/4] object-cover"
                         />
-                        <p className="mt-4 text-center text-3xl tracking-widest">
+                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">
                             estacionamiento
                             <br />
                             subterráneo
                         </p>
                     </div>
                 </div>
-                <img src='/colleti-logo.png' alt='Colleti Logo' className='w-[220px] object-cover ms-auto mt-10 ' />
+                <div className="flex justify-end px-4 sm:px-8 md:px-12 lg:px-20 mt-6 sm:mt-8 md:mt-10">
+                    <img 
+                        src='/colleti-logo.png' 
+                        alt='Colleti Logo' 
+                        className='w-[160px] sm:w-[180px] md:w-[220px] object-cover' 
+                    />
+                </div>
             </div>
         </section>
     )
