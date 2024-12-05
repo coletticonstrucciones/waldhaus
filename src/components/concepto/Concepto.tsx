@@ -33,28 +33,26 @@ export default function Concepto() {
     };
 
     return (
-        <section className="relative bg-black text-white font-sans pb-28 ">
-            <div className="max-w-7xl mx-auto">
+        <section className="relative bg-black text-white font-sans pb-16 sm:pb-20 md:pb-28">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Título estilizado */}
-                <div className="text-center  pb-8 mx-auto">
-                    {/* <h1 className="text-[104px] font-light italic tracking-wide" style={{ fontFamily: "'Hello January', cursive" }}>
-                        Elegancia austera
-                    </h1> */}
+                <div className="text-center pb-4 sm:pb-6 md:pb-8 mx-auto">
                     <img
-                    src="/elegancia-title.png"
-                    alt="Elegancia austera"
-                    className="object-contain aspect-video mx-auto"
+                        src="/elegancia-title.png"
+                        alt="Elegancia austera"
+                        className="object-contain aspect-video mx-auto w-full max-w-[80%] sm:max-w-[70%] md:max-w-full"
                     />
                 </div>
 
                 {/* Slider */}
-                <div className="relative bg-black text-white h-[600px] w-full mb-16 ">
+                <div className="relative bg-black text-white h-[300px] sm:h-[400px] md:h-[600px] w-full mb-8 sm:mb-12 md:mb-16">
                     <div className="relative h-full overflow-hidden max-w-5xl mx-auto">
                         {slides.map((slide, index) => (
                             <div
                                 key={slide.id}
-                                className={`absolute inset-0 transition-transform duration-700 ${index === currentSlide ? "translate-x-0" : "translate-x-full"
-                                    }`}
+                                className={`absolute inset-0 transition-transform duration-700 ${
+                                    index === currentSlide ? "translate-x-0" : "translate-x-full"
+                                }`}
                                 style={{
                                     transform:
                                         index === currentSlide
@@ -76,13 +74,13 @@ export default function Concepto() {
                     {/* Flechas de navegación */}
                     <button
                         onClick={handlePrev}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-200"
+                        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-200"
                     >
                         &#8249;
                     </button>
                     <button
                         onClick={handleNext}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-200"
+                        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-200"
                     >
                         &#8250;
                     </button>
@@ -92,8 +90,9 @@ export default function Concepto() {
                         {slides.map((_, index) => (
                             <div
                                 key={index}
-                                className={`w-3 h-3 rounded-full cursor-pointer ${index === currentSlide ? "bg-white" : "bg-gray-500"
-                                    }`}
+                                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full cursor-pointer ${
+                                    index === currentSlide ? "bg-white" : "bg-gray-500"
+                                }`}
                                 onClick={() => setCurrentSlide(index)}
                             ></div>
                         ))}
@@ -101,11 +100,11 @@ export default function Concepto() {
                 </div>
 
                 {/* Contenido adicional */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-5xl mx-auto">
                     {/* Sección 1: Texto e Imagen */}
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
                         <h2
-                            className="text-5xl font-bold mb-4 leading-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
                             style={{ fontFamily: "'Helvetica Now', sans-serif" }}
                         >
                             about&nbsp;&nbsp;&nbsp;the
@@ -114,7 +113,7 @@ export default function Concepto() {
                         </h2>
 
                         <p
-                            className="text-[14.2px] leading-relaxed"
+                            className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
                             style={{ fontFamily: "'Open Sans', sans-serif" }}
                         >
                             Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar hac ridiculus mauris,
@@ -123,7 +122,7 @@ export default function Concepto() {
                             praesent class platea.
                         </p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center mt-4 md:mt-0">
                         <img
                             src="/about-the-view.png"
                             alt="Vista secundaria"
@@ -132,16 +131,16 @@ export default function Concepto() {
                     </div>
 
                     {/* Sección 2: Imagen y Texto */}
-                    <div className="flex items-center">
+                    <div className="flex items-center order-2 md:order-1">
                         <img
                             src="about-the-services.png"
                             alt="Servicios secundarios"
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6 order-1 md:order-2">
                         <h2
-                            className="text-5xl font-bold mb-4"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
                             style={{ fontFamily: "'Helvetica Now', sans-serif" }}
                         >
                             about&nbsp;&nbsp;&nbsp;the
@@ -149,7 +148,7 @@ export default function Concepto() {
                             <span>services_</span>
                         </h2>
                         <p
-                            className="text-[14.2px] leading-relaxed"
+                            className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
                             style={{ fontFamily: "'Open Sans', sans-serif" }}
                         >
                             Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar hac ridiculus mauris,
