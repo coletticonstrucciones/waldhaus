@@ -85,7 +85,7 @@ export default function Proyecto() {
                         </p>
                     </div>
                 </div>
-                <img src='/colleti-logo.png' alt='Colleti Logo' className='w-[220px] object-cover ms-auto mt-10 mb-16' />
+                <img src='/colleti-logo.png' alt='Colleti Logo' className='w-[220px] object-cover ms-auto mt-10 ' />
             </div>
         </section>
     )
