@@ -413,7 +413,7 @@ export default function Unidades() {
                     />
                     <motion.button
                       onClick={handleDownload}
-                      className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 md:opacity-0 transition-opacity duration-300 px-2 py-2 bg-black/60 backdrop-blur-sm border border-white/20 rounded-full text-sm hover:bg-black/80 flex items-center gap-2"
+                      className="absolute bottom-6 right-3 opacity-100 md:opacity-0 transition-opacity duration-300 px-2 py-2 bg-black/60 backdrop-blur-sm border border-white/20 rounded-full text-sm hover:bg-black/80 flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
