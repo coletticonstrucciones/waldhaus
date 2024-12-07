@@ -8,7 +8,7 @@ import Contacto from "@/components/contacto/Contacto";
 
 export default function page() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <PortadaPrincipal />
       <Concepto />
       <Ubicacion />
