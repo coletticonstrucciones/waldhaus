@@ -21,9 +21,9 @@ export default function Proyecto() {
                         className="w-full lg:w-[60%] xl:w-[800px] aspect-[5/4] object-cover" 
                     />
                     <img 
-                        src="/maqueta.png" 
-                        alt="maqueta-colleti" 
-                        className="w-full lg:w-[35%] xl:w-[500px] object-cover" 
+                        src="/proyecto/boceto-firma.png" 
+                        alt="boceto-colleti" 
+                        className="w-full lg:w-[35%] xl:w-[700px] aspect-[368/243] object-cover" 
                     />
                 </div>
                 <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 leading-relaxed space-y-4 text-sm sm:text-base">
@@ -56,17 +56,17 @@ export default function Proyecto() {
                     {/* Tarjetas de imágenes inferiores */}
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/vistas.png"
+                            src="/proyecto/1.png"
                             alt="Vistas"
-                            className="w-full aspect-[3/4] object-cover"
+                            className="w-full aspect-[25/37] object-cover"
                         />
                         <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">vistas</p>
                     </div>
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/paisajismo.png"
+                            src="/proyecto/2.png"
                             alt="Paisajismo"
-                            className="w-full aspect-[3/4] object-cover"
+                            className="w-full aspect-[25/37] object-cover"
                         />
                         <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">
                             paisajismo
@@ -74,17 +74,17 @@ export default function Proyecto() {
                     </div>
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/gym-spa.png"
+                            src="/proyecto/3.png"
                             alt="Gym & Spa"
-                            className="w-full aspect-[3/4] object-cover"
+                            className="w-full aspect-[25/37] object-cover"
                         />
                         <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">gym & spa</p>
                     </div>
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/estacionamiento.png"
+                            src="/proyecto/4.png"
                             alt="Estacionamiento Subterráneo"
-                            className="w-full aspect-[3/4] object-cover"
+                            className="w-full aspect-[25/37] object-cover"
                         />
                         <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">
                             estacionamiento

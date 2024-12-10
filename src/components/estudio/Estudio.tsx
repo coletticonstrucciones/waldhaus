@@ -12,10 +12,10 @@ export default function Estudio() {
   });
 
   const projects = [
-    { name: 'proyectos', image: '/proyectos.png' },
-    { name: 'el taller', image: '/proyectos.png' },
-    { name: 'visión', image: '/proyectos.png' },
-    { name: 'historia', image: '/proyectos.png' }
+    { name: 'proyectos', image: '/estudio/1.png' },
+    { name: 'el taller', image: '/estudio/2.png' },
+    { name: 'visión', image: '/estudio/3.png' },
+    { name: 'historia', image: '/estudio/4.png' }
   ]
 
   return (
@@ -32,12 +32,12 @@ export default function Estudio() {
         </h2>
         <div className="flex flex-col gap-8 sm:gap-12 md:gap-16">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-start">
-            <div className="relative w-full aspect-square object-cover lg:col-span-2">
+            <div className="relative w-full object-cover lg:col-span-2">
               <Image
                 src="/colleti-espalda.png"
                 alt="Estudio principal"
                 fill
-                className="object-cover"
+                className="w-full aspect-[25/37] object-cover"
               />
             </div>
             <div className="space-y-6 sm:space-y-8 lg:col-span-3 px-0 sm:px-6 lg:px-10">

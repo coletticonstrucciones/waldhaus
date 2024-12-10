@@ -6,17 +6,32 @@ import { useState } from "react";
 const slides = [
     {
         id: 1,
-        image: "/concepto-slide.png", // Reemplaza con tus URLs de imágenes
+        image: "/slider/1.jpg", 
         alt: "Imagen 1",
     },
     {
         id: 2,
-        image: "/concepto-slide.png", // Reemplaza con tus URLs de imágenes
+        image: "/slider/2.jpg", 
         alt: "Imagen 2",
     },
     {
         id: 3,
-        image: "/concepto-slide.png", // Reemplaza con tus URLs de imágenes
+        image: "/slider/3.jpg", 
+        alt: "Imagen 3",
+    },
+    {
+        id: 4,
+        image: "/slider/4.jpg", 
+        alt: "Imagen 1",
+    },
+    {
+        id: 5,
+        image: "/slider/5.jpg", 
+        alt: "Imagen 2",
+    },
+    {
+        id: 6,
+        image: "/slider/6.jpg", 
         alt: "Imagen 3",
     },
 ];
@@ -34,7 +49,7 @@ export default function Concepto() {
 
     return (
         <section className="relative bg-black text-white font-sans pb-16 sm:pb-20 md:pb-28">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
                 {/* Título estilizado */}
                 <div className="text-center pb-4 sm:pb-6 md:pb-8 mx-auto">
                     <img
@@ -45,57 +60,69 @@ export default function Concepto() {
                 </div>
 
                 {/* Slider */}
-                <div className="relative bg-black text-white h-[300px] sm:h-[400px] md:h-[600px] w-full mb-8 sm:mb-12 md:mb-16">
-                    <div className="relative h-full overflow-hidden max-w-5xl mx-auto">
-                        {slides.map((slide, index) => (
-                            <div
-                                key={slide.id}
-                                className={`absolute inset-0 transition-transform duration-700 ${
-                                    index === currentSlide ? "translate-x-0" : "translate-x-full"
-                                }`}
-                                style={{
-                                    transform:
-                                        index === currentSlide
-                                            ? "translateX(0)"
-                                            : index < currentSlide
-                                                ? "translateX(-100%)"
-                                                : "translateX(100%)",
-                                }}
-                            >
-                                <img
-                                    src={slide.image}
-                                    alt={slide.alt}
-                                    className="w-full h-full object-cover"
-                                />
+                <div className="relative w-full max-w-[1400px] mx-auto px-20 sm:px-28">
+                    <div className="relative bg-black text-white h-[300px] sm:h-[400px] md:h-[600px] w-full mb-8 sm:mb-12 md:mb-16">
+                        <div className="relative h-full overflow-hidden max-w-5xl mx-auto">
+                            {slides.map((slide, index) => (
+                                <div
+                                    key={slide.id}
+                                    className={`absolute inset-0 transition-transform duration-700 ${
+                                        index === currentSlide ? "translate-x-0" : "translate-x-full"
+                                    }`}
+                                    style={{
+                                        transform:
+                                            index === currentSlide
+                                                ? "translateX(0)"
+                                                : index < currentSlide
+                                                    ? "translateX(-100%)"
+                                                    : "translateX(100%)",
+                                    }}
+                                >
+                                    <img
+                                        src={slide.image}
+                                        alt={slide.alt}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Flechas de navegación */}
+                        <button
+                            onClick={handlePrev}
+                            className="absolute -left-16 sm:-left-20 top-1/2 transform -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-black text-white rounded-full border border-white hover:bg-black/80 transition-all"
+                            aria-label="Anterior"
+                        >
+                            <div className="relative w-7 flex items-center">
+                                <div className="w-7 h-[1px] bg-white"></div>
+                                <div className="absolute left-0 w-2 h-[1px] bg-white origin-left rotate-45"></div>
+                                <div className="absolute left-0 w-2 h-[1px] bg-white origin-left -rotate-45"></div>
                             </div>
-                        ))}
-                    </div>
+                        </button>
+                        <button
+                            onClick={handleNext}
+                            className="absolute -right-16 sm:-right-20 top-1/2 transform -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-black text-white rounded-full border border-white hover:bg-black/80 transition-all"
+                            aria-label="Siguiente"
+                        >
+                            <div className="relative w-7 flex items-center">
+                                <div className="w-7 h-[1px] bg-white"></div>
+                                <div className="absolute right-0 w-2 h-[1px] bg-white origin-right -rotate-45"></div>
+                                <div className="absolute right-0 w-2 h-[1px] bg-white origin-right rotate-45"></div>
+                            </div>
+                        </button>
 
-                    {/* Flechas de navegación */}
-                    <button
-                        onClick={handlePrev}
-                        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-200"
-                    >
-                        &#8249;
-                    </button>
-                    <button
-                        onClick={handleNext}
-                        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-200"
-                    >
-                        &#8250;
-                    </button>
-
-                    {/* Indicadores */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                        {slides.map((_, index) => (
-                            <div
-                                key={index}
-                                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full cursor-pointer ${
-                                    index === currentSlide ? "bg-white" : "bg-gray-500"
-                                }`}
-                                onClick={() => setCurrentSlide(index)}
-                            ></div>
-                        ))}
+                        {/* Indicadores */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                            {slides.map((_, index) => (
+                                <div
+                                    key={index}
+                                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full cursor-pointer ${
+                                        index === currentSlide ? "bg-white" : "bg-gray-500"
+                                    }`}
+                                    onClick={() => setCurrentSlide(index)}
+                                ></div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
