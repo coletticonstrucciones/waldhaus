@@ -290,7 +290,7 @@ export default function Concepto() {
                 </div>
 
                 {/* Contenido adicional */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 md:px-10  mx-auto">
                     {/* Sección 1: Texto e Imagen */}
                     <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
                         <h2
