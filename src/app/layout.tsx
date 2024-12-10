@@ -35,10 +35,6 @@ export const metadata: Metadata = {
     title: "Waldhaus | Estudio de Arquitectura",
     description: "Estudio de arquitectura especializado en diseño sostenible y contemporáneo",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   icons: {
     icon: "/favicon.ico",
   },
