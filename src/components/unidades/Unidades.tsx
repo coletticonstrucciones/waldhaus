@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 interface UnitData {
@@ -76,30 +77,59 @@ export default function Unidades() {
   const [selectedUnit, setSelectedUnit] = useState<string | null>(null)
   const [currentUnitIndex, setCurrentUnitIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
   const isMobile = useMediaQuery({ maxWidth: 768 })
+
+  const nextUnit = useCallback(() => {
+    setCurrentUnitIndex((prev) => (prev + 1) % units.length)
+  }, [])
+
+  const prevUnit = useCallback(() => {
+    setCurrentUnitIndex((prev) => (prev - 1 + units.length) % units.length)
+  }, [])
 
   // Actualizar automáticamente el plano extendido al cambiar de unidad
   useEffect(() => {
     setSelectedUnit(units[currentUnitIndex].id)
   }, [currentUnitIndex])
 
+  // Autoplay con pausa
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        nextUnit()
+      }, 5000) // Cambiar cada 5 segundos
+
+      return () => clearInterval(interval)
+    }
+  }, [isPaused, nextUnit])
+
+  const handleManualInteraction = () => {
+    setIsPaused(true)
+    // Reanudar el autoplay después de 10 segundos de inactividad
+    const timeout = setTimeout(() => {
+      setIsPaused(false)
+    }, 10000)
+    return () => clearTimeout(timeout)
+  }
+
   const handleUnitClick = (unitId: string) => {
+    handleManualInteraction()
     setSelectedUnit(unitId)
     if (isMobile) {
       setIsModalOpen(true)
     }
   }
 
-  const nextUnit = () => {
-    setCurrentUnitIndex((prev) => (prev + 1) % units.length)
+  const handleNavigationClick = (action: () => void) => {
+    handleManualInteraction()
+    action()
   }
 
-  const prevUnit = () => {
-    setCurrentUnitIndex((prev) => (prev - 1 + units.length) % units.length)
+  const handleUnitButtonClick = (index: number) => {
+    handleManualInteraction()
+    setCurrentUnitIndex(index)
   }
-
-  const selectedUnitData = units.find(unit => unit.id === selectedUnit)
-  const currentUnit = units[currentUnitIndex]
 
   const handleDownload = async () => {
     try {
@@ -134,6 +164,9 @@ export default function Unidades() {
       opacity: 0
     })
   }
+
+  const selectedUnitData = units.find(unit => unit.id === selectedUnit)
+  const currentUnit = units[currentUnitIndex]
 
   return (
     <section id="unidades" className="relative text-white font-sans min-h-screen bg-black overflow-hidden">
@@ -200,7 +233,7 @@ export default function Unidades() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  onClick={prevUnit}
+                  onClick={() => handleNavigationClick(prevUnit)}
                   className="p-2 rounded-full bg-black/50 backdrop-blur-sm border border-white/20"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,27 +241,27 @@ export default function Unidades() {
                   </svg>
                 </motion.button>
                 {/* Unit Navigation */}
-              <div className="flex justify-center items-center gap-2 md:gap-6">
-                {units.map((unit, index) => (
-                  <motion.button
-                    key={unit.id}
-                    onClick={() => setCurrentUnitIndex(index)}
-                    className={`relative text-sm font-light tracking-[0.2em] transition-colors duration-300 ${
-                      index === currentUnitIndex 
-                        ? 'text-white after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-white' 
-                        : 'text-white/30 hover:text-white/50'
-                    }`}
-                    whileHover={{ y: -1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {unit.id}
-                  </motion.button>
-                ))}
-              </div>
+                <div className="flex justify-center items-center gap-2 md:gap-6">
+                  {units.map((unit, index) => (
+                    <motion.button
+                      key={unit.id}
+                      onClick={() => handleUnitButtonClick(index)}
+                      className={`relative text-sm font-light tracking-[0.2em] transition-colors duration-300 ${
+                        index === currentUnitIndex 
+                          ? 'text-white after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-white' 
+                          : 'text-white/30 hover:text-white/50'
+                      }`}
+                      whileHover={{ y: -1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {unit.id}
+                    </motion.button>
+                  ))}
+                </div>
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  onClick={nextUnit}
+                  onClick={() => handleNavigationClick(nextUnit)}
                   className="p-2 rounded-full bg-black/50 backdrop-blur-sm border border-white/20"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -453,8 +486,8 @@ export default function Unidades() {
                   )}
                 </div>
               </motion.div>
-            </>
-          )}
+            </>)
+          }
         </AnimatePresence>
       </div>
     </section>
