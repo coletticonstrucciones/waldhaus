@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
@@ -149,10 +150,10 @@ export default function Concepto() {
                 </div>
 
                 {/* Slider */}
-                <div className="relative w-full max-w-[1400px] mx-auto md:px-20 ">
+                <div className="relative w-full  mx-auto md:px-10 ">
                     <div 
                         ref={sliderRef}
-                        className="relative bg-black text-white h-[600px] md:h-[600px] w-full mb-8 sm:mb-12 md:mb-16 overflow-hidden touch-pan-y"
+                        className="relative bg-black text-white h-[600px] md:h-[900px] w-full mb-8 sm:mb-12 md:mb-16 overflow-hidden touch-pan-y"
                         onMouseMove={handleMagnify}
                     >
                         <AnimatePresence initial={false} custom={direction} mode="wait">
@@ -208,6 +209,7 @@ export default function Concepto() {
                                                         backgroundPositionX: -zoomPosition.mouseX * 2 + 56,
                                                         backgroundPositionY: -zoomPosition.mouseY * 2 + 56,
                                                         filter: 'brightness(1.1) contrast(1.05)',
+                                                        aspectRatio: '2880/1936'
                                                     }}
                                                 />
                                             </div>
