@@ -12,10 +12,10 @@ export default function Estudio() {
   });
 
   const projects = [
-    { name: 'proyectos', image: '/estudio/1.png' },
-    { name: 'el taller', image: '/estudio/2.png' },
-    { name: 'visión', image: '/estudio/3.png' },
-    { name: 'historia', image: '/estudio/4.png' }
+    { name: 'proyectos', image: '/Estudio/1.png' },
+    { name: 'el taller', image: '/Estudio/2.png' },
+    { name: 'visión', image: '/Estudio/3.png' },
+    { name: 'historia', image: '/Estudio/4.png' }
   ]
 
   return (

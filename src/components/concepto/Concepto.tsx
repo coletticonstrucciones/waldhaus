@@ -9,32 +9,32 @@ import { useMediaQuery } from "react-responsive";
 const slides = [
     {
         id: 1,
-        image: "/slider/1.jpg", 
+        image: "/Slider/1.jpg", 
         alt: "Imagen 1",
     },
     {
         id: 2,
-        image: "/slider/2.jpg", 
+        image: "/Slider/2.jpg", 
         alt: "Imagen 2",
     },
     {
         id: 3,
-        image: "/slider/3.jpg", 
+        image: "/Slider/3.jpg", 
         alt: "Imagen 3",
     },
     {
         id: 4,
-        image: "/slider/4.jpg", 
+        image: "/Slider/4.jpg", 
         alt: "Imagen 1",
     },
     {
         id: 5,
-        image: "/slider/5.jpg", 
+        image: "/Slider/5.jpg", 
         alt: "Imagen 2",
     },
     {
         id: 6,
-        image: "/slider/6.jpg", 
+        image: "/Slider/6.jpg", 
         alt: "Imagen 3",
     },
 ];

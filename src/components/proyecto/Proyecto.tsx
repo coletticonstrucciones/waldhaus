@@ -21,7 +21,7 @@ export default function Proyecto() {
                         className="w-full lg:w-[60%] xl:w-[800px] aspect-[5/4] object-cover" 
                     />
                     <img 
-                        src="/proyecto/boceto-firma.png" 
+                        src="/Proyecto/boceto-firma.png" 
                         alt="boceto-colleti" 
                         className="w-full lg:w-[35%] xl:w-[700px] aspect-[368/243] object-cover" 
                     />
@@ -56,7 +56,7 @@ export default function Proyecto() {
                     {/* Tarjetas de imágenes inferiores */}
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/proyecto/1.png"
+                            src="/Proyecto/1.png"
                             alt="Vistas"
                             className="w-full aspect-[25/37] object-cover"
                         />
@@ -64,7 +64,7 @@ export default function Proyecto() {
                     </div>
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/proyecto/2.png"
+                            src="/Proyecto/2.png"
                             alt="Paisajismo"
                             className="w-full aspect-[25/37] object-cover"
                         />
@@ -74,7 +74,7 @@ export default function Proyecto() {
                     </div>
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/proyecto/3.png"
+                            src="/Proyecto/3.png"
                             alt="Gym & Spa"
                             className="w-full aspect-[25/37] object-cover"
                         />
@@ -82,7 +82,7 @@ export default function Proyecto() {
                     </div>
                     <div className="flex flex-col items-center sm:items-start">
                         <img
-                            src="/proyecto/4.png"
+                            src="/Proyecto/4.png"
                             alt="Estacionamiento Subterráneo"
                             className="w-full aspect-[25/37] object-cover"
                         />
