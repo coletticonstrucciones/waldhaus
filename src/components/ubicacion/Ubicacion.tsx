@@ -97,6 +97,7 @@ export default function Ubicacion() {
                             </svg>
                         </button>
                     </div>
+                    {/* falta colocar video */}
                     <video
                         src="URL_DE_TU_VIDEO"
                         poster="URL_DE_LA_IMAGEN_POSTER"
