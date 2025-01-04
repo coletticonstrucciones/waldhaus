@@ -15,41 +15,26 @@ export default function Proyecto() {
                     Proyecto
                 </h2>
                 <div className='flex flex-col lg:flex-row justify-between items-center lg:items-end gap-8 px-0 sm:px-4 md:px-8 lg:px-20'>
-                    <img 
-                        src="/proyecto-portada.png" 
-                        alt="proyecto" 
-                        className="w-full lg:w-[60%] xl:w-[800px] aspect-[5/4] object-cover" 
+                    <img
+                        src="/proyecto-portada.png"
+                        alt="proyecto"
+                        className="w-full lg:w-[60%] xl:w-[800px] aspect-[5/4] object-cover"
                     />
-                    <img 
-                        src="/Proyecto/boceto-firma.png" 
-                        alt="boceto-colleti" 
-                        className="w-full lg:w-[35%] xl:w-[700px] aspect-[368/243] object-cover" 
+                    <img
+                        src="/Proyecto/boceto-firma.png"
+                        alt="boceto-colleti"
+                        className="w-full lg:w-[35%] xl:w-[700px] aspect-[368/243] object-cover"
                     />
                 </div>
-                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 leading-relaxed space-y-4 text-sm sm:text-base">
-                    <p>Waldhaus se desarrolla sobre un terreno irregular.</p>
+                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 leading-relaxed space-y-4 leading-relaxed text-sm sm:text-base font-extralight">
                     <p>
-                        Tiene la particularidad de estar frente a la ruta 339, pero también sobre un
-                        camino vecinal más privado, más íntimo por el cual se puede ingresar.
-                    </p>
-                    <p>
-                        Se tomó un sector del terreno y bajo un eje ordenador se ubicaron dos
-                        volúmenes iguales, pero rotados.
-                    </p>
-                    <p>
-                        Este eje y las dos torres desplazadas permite generar dos sectores
-                        claramente definidos.
-                    </p>
-                    <p>
-                        Por un lado el sector de acceso peatonal y vehicular, por el que se accede
-                        a un gran estacionamiento subterráneo y por otro lado un ámbito de
-                        esparcimiento, jardines y pileta.
-                    </p>
-                    <p>Las torres están rodeadas de grandes terrazas con asadores privados.</p>
-                    <p>
-                        Creo que para quienes desean vivir en un ámbito de buena arquitectura, de
-                        una elegancia austera, y fundamentalmente de mucha calidad, este es
-                        probablemente el lugar indicado.
+                        Waldhaus se desarrolla sobre un terreno irregular.<br />
+                        Tiene la particularidad de estar frente a la ruta 339, pero también sobre un camino vecinal más privado, más íntimo por el cual se puede ingresar.<br />
+                        Se tomó un sector del terreno y bajo un eje ordenador se ubicaron dos volúmenes iguales, pero rotados.<br />
+                        Este eje y las dos torres desplazadas permite generar dos sectores claramente definidos.<br />
+                        Por un lado el sector de acceso peatonal y vehicular, por el que se accede a un gran estacionamiento subterráneo y por otro lado un ámbito de esparcimiento, jardines y pileta.<br />
+                        Las torres están rodeadas de grandes terrazas con asadores privados.<br />
+                        Creo que para quienes desean vivir en un ámbito de buena arquitectura, de una elegancia austera, y fundamentalmente de mucha calidad, este es probablemente el lugar indicado.
                     </p>
                 </article>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 sm:mt-12 md:mt-16 px-4 sm:px-8 md:px-12 lg:px-20">
@@ -94,10 +79,10 @@ export default function Proyecto() {
                     </div>
                 </div>
                 <div className="flex justify-end px-4 sm:px-8 md:px-12 lg:px-20 mt-6 sm:mt-8 md:mt-10">
-                    <img 
-                        src='/colleti-logo.png' 
-                        alt='Colleti Logo' 
-                        className='w-[160px] sm:w-[180px] md:w-[220px] object-cover' 
+                    <img
+                        src='/colleti-logo.png'
+                        alt='Colleti Logo'
+                        className='w-[160px] sm:w-[180px] md:w-[220px] object-cover'
                     />
                 </div>
             </div>
