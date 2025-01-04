@@ -63,21 +63,21 @@ export default function Ubicacion() {
                 {/* Texto en dos columnas */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 text-sm md:text-base text-gray-200 bg-black p-4 sm:p-6 md:p-7 shadow-lg max-w-5xl mx-auto mt-8 sm:mt-12 md:mt-16">
                     {/* Primera columna */}
-                    <div className="flex flex-col justify-between border-b md:border-b-0 md:border-r border-gray-600 pb-6 md:pb-0 md:pr-6">
-                        <p className="leading-relaxed mb-4 sm:mb-6 md:mb-8">
+                    <div className="flex flex-col justify-between border-b md:border-b-0 md:border-r border-gray-600 pb-6 md:pb-0 md:pr-6 leading-relaxed text-sm sm:text-base font-extralight">
+                        <p className=" mb-4 sm:mb-6 md:mb-8 ">
                             Woods Bagot - International architecture firm based in Adelaide, South Australia. Specializes in the design and planning of buildings in a wide variety of sectors and disciplines.
                         </p>
-                        <p className="leading-relaxed">
+                        <p className="">
                             The main problem of the current site is that it does not reflect high level of competence and modernity of this architectural bureau. The content is not well structured for quick and easy reading. The challenge was to correct these shortcomings.
                         </p>
                     </div>
 
                     {/* Segunda columna */}
-                    <div className="flex flex-col justify-between pt-6 md:pt-0">
-                        <p className="leading-relaxed mb-4 sm:mb-6 md:mb-8">
+                    <div className="flex flex-col justify-between pt-6 md:pt-0 leading-relaxed text-sm sm:text-base font-extralight">
+                        <p className=" mb-4 sm:mb-6 md:mb-8">
                             Woods Bagot is now established worldwide, with studios in six regions: Southeast Asia, China, Australia & NZ, Europe, the Middle East, and North America.
                         </p>
-                        <p className="leading-relaxed">
+                        <p className="">
                             The design is made in a minimalist style, with work done with accents. Layouts are designed with dark modern style by default and the ability to switch to light mode. These solutions were chosen to complete the main task.
                         </p>
                     </div>

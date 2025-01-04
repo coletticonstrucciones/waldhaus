@@ -303,8 +303,8 @@ export default function Concepto() {
                         </h2>
 
                         <p
-                            className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
-                            style={{ fontFamily: "'Open Sans', sans-serif" }}
+                            className=" md:text-[14.2px] leading-relaxed text-sm sm:text-base"
+                            
                         >
                             Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar hac ridiculus mauris,
                             dignissim luctus libero ullamcorper risus fermentum duis blandit socios litora porttitor.
@@ -339,7 +339,7 @@ export default function Concepto() {
                         </h2>
                         <p
                             className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
-                            style={{ fontFamily: "'Open Sans', sans-serif" }}
+                            
                         >
                             Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar hac ridiculus mauris,
                             dignissim luctus libero ullamcorper risus fermentum duis blandit socios litora porttitor.

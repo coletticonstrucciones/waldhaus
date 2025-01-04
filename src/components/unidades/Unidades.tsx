@@ -1,13 +1,12 @@
 'use client'
 
+import {
+  ArrowDownTrayIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import { 
-  XMarkIcon, 
-  ArrowDownTrayIcon, 
-  ArrowsPointingOutIcon, 
-} from '@heroicons/react/24/outline'
+import { useEffect, useState } from 'react'
 
 interface UnitData {
   id: string
@@ -175,17 +174,25 @@ export default function Unidades() {
 
   return (
     <section id="unidades" className="relative min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-0">
-
-
       <div className="container mx-auto px-4 min-h-screen flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 w-full max-w-6xl mx-auto">
-          
+          <div className='col-span-2'>
+            <h2
+              className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
+              style={{
+                fontFamily: "'Helvetica Now', sans-serif",
+                color: "#FFFFFF",
+              }}
+            >
+              UNIDADES
+            </h2>
+          </div>
           {/* ---------------- PLANO PRINCIPAL ---------------- */}
           <div className="relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="relative aspect-[612.98/489.54] rounded-xl sm:rounded-2xl bg-neutral-900/50 border border-neutral-800 overflow-hidden group"
+              className="relative aspect-[612.98/489.54]  group"
             >
               {/* Contenedor principal escalado */}
               <div className="absolute inset-0" style={{ transform: 'scale(0.5)', transformOrigin: 'center center' }}>
@@ -205,64 +212,58 @@ export default function Unidades() {
                   />
                 </div>
 
-                {/* Imagen que se muestra al hover para resaltar la planta correspondiente */}
+                {/* Imagen que se muestra al hover */}
                 {hoveredFloor !== 'base' && (
-                  <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute inset-0">
                     <Image
                       src={`/unidades/WALDHAUS-${hoveredFloor}.svg`}
                       alt={`Plano piso ${hoveredFloor}`}
                       fill
-                      className="object-contain mix-blend-screen"
+                      className="object-contain"
                       style={{
-                        filter: 'brightness(2) contrast(1.2) saturate(0) drop-shadow(0 0 2px rgba(255,255,255,0.3))',
-                        opacity: 0.4,
+                        filter: `brightness(1.5) contrast(1.2) invert(1)`,
+                        opacity: 0.3,
+                        mixBlendMode: 'screen',
                       }}
                       priority
                     />
                   </div>
                 )}
 
-                {/* SVG superpuesto con <path> interactivos para cada unidad/piso */}
+                {/* SVG interactivo */}
                 <svg
                   className="absolute inset-0 w-full h-full"
                   viewBox="0 0 612.98 489.54"
                   preserveAspectRatio="xMidYMid meet"
                 >
                   {[...units]
-                    .sort((a, b) => b.floor - a.floor) // Ordenar de arriba hacia abajo
+                    .sort((a, b) => b.floor - a.floor)
                     .map((unit) => {
-                    const pathD = floorPaths[unit.floor]
-                    const isSelected = selectedUnit.id === unit.id
-                    return (
-                      <path
-                        key={unit.id}
-                        d={pathD}
-                        fill={isSelected ? unit.color : 'transparent'}
-                        fillOpacity={isSelected ? 0.3 : 0}
-                        stroke={isSelected ? unit.color : debugMode ? unit.color : 'transparent'}
-                        strokeWidth={isSelected || debugMode ? 2 : 0}
-                        onMouseEnter={() => setHoveredFloor(unit.floor)}
-                        onMouseLeave={() => setHoveredFloor('base')}
-                        onClick={() => {
-                          setSelectedUnit(unit)
-                        }}
-                        className="transition-all duration-300 cursor-pointer"
-                        style={{
-                          color: unit.color,
-                        }}
-                      />
-                    )
-                  })}
+                      const pathD = floorPaths[unit.floor]
+                      const isSelected = selectedUnit.id === unit.id
+                      const isHovered = hoveredFloor === unit.floor
+                      return (
+                        <path
+                          key={unit.id}
+                          d={pathD}
+                          fill={isSelected || isHovered ? unit.color : 'transparent'}
+                          fillOpacity={isSelected || isHovered ? 0.3 : 0}
+                          stroke={isSelected || isHovered || debugMode ? unit.color : 'transparent'}
+                          strokeWidth={isSelected || isHovered || debugMode ? 2 : 0}
+                          onMouseEnter={() => setHoveredFloor(unit.floor)}
+                          onMouseLeave={() => setHoveredFloor('base')}
+                          onClick={() => {
+                            setSelectedUnit(unit)
+                          }}
+                          className="transition-all duration-300 cursor-pointer"
+                          style={{
+                            color: unit.color,
+                          }}
+                        />
+                      )
+                    })}
                 </svg>
               </div>
-              {/* Botón para ver plano extendido (modal) */}
-              <button
-                onClick={() => setShowExtendedPlan(true)}
-                className="absolute bottom-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-2 transition-colors z-20"
-                aria-label="Ver plano extendido"
-              >
-                <ArrowsPointingOutIcon className="w-5 h-5" />
-              </button>
             </motion.div>
           </div>
 
@@ -289,26 +290,6 @@ export default function Unidades() {
                 >
                   <ArrowDownTrayIcon className="w-5 h-5" />
                 </button>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl sm:text-4xl mb-2 sm:mb-3">Unidad {selectedUnit.id}</h2>
-              <p className="text-lg sm:text-xl text-neutral-400">{selectedUnit.type}</p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4 sm:gap-6">
-              <div className="bg-neutral-900/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl">
-                <p className="text-neutral-400 text-sm sm:text-base mb-1 sm:mb-2">Área Cubierta</p>
-                <p className="text-xl sm:text-2xl">{selectedUnit.coveredArea}m²</p>
-              </div>
-              <div className="bg-neutral-900/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl">
-                <p className="text-neutral-400 text-sm sm:text-base mb-1 sm:mb-2">Terraza</p>
-                <p className="text-xl sm:text-2xl">{selectedUnit.terraceArea}m²</p>
-              </div>
-              <div className="bg-neutral-900/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl">
-                <p className="text-neutral-400 text-sm sm:text-base mb-1 sm:mb-2">Total</p>
-                <p className="text-xl sm:text-2xl">{selectedUnit.totalArea}m²</p>
               </div>
             </div>
           </motion.div>
