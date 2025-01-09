@@ -19,10 +19,10 @@ export default function Estudio() {
   ]
 
   return (
-    <section id="estudio" className="bg-black text-white py-12 sm:py-16 md:py-24 min-h-screen">
+    <section id="estudio" className="bg-black text-white pb-12 sm:pb-16 md:pb-24 min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <h2
-          className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
+          className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16  pb-8 sm:pb-12 md:pb-16"
           style={{
             fontFamily: "'Helvetica Now', sans-serif",
             color: "#FFFFFF",

@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
 import {
-  ArrowDownTrayIcon,
-  XMarkIcon
+  ArrowDownTrayIcon
 } from '@heroicons/react/24/outline'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
@@ -93,6 +93,30 @@ const units: UnitData[] = [
   },
 ]
 
+// Mapping de unidades a PDFs (solo para descarga)
+const unitToPdfMap: Record<string, string> = {
+  'A': 'PLANTILLA DPTO 2 DOMITORIOS B.pdf',
+  'B': 'PLANTILLA DPTO LOFT.pdf',
+  'C': 'PLANTILLA DPTO 2 DOMITORIOS C.pdf',
+  'D': 'PLANTILLA DPTO 1 DOMITORIO B.pdf',
+  'E': 'PLANTILLA DPTO 1 DOMITORIO A.pdf',
+  'F': 'PLANTILLA DPTO LOFT.pdf',
+  'G': 'PLANTILLA DPTO LOFT.pdf',
+  'H': 'PLANTILLA DPTO 2 DOMITORIOS A.pdf',
+}
+
+// Mapping de unidades a imágenes webp (para visualización)
+const unitToImageMap: Record<string, string> = {
+  'A': 'PLANTILLA DPTO 2 DOMITORIOS B.webp',
+  'B': 'PLANTILLA DPTO LOFT.webp',
+  'C': 'PLANTILLA DPTO 2 DOMITORIOS C.webp',
+  'D': 'PLANTILLA DPTO 1 DOMITORIO B.webp',
+  'E': 'PLANTILLA DPTO 1 DOMITORIO A.webp',
+  'F': 'PLANTILLA DPTO LOFT.webp',
+  'G': 'PLANTILLA DPTO LOFT.webp',
+  'H': 'PLANTILLA DPTO 2 DOMITORIOS A.webp',
+}
+
 // Aquí definimos las rutas en <path> para cada floor de ejemplo
 const floorPaths: Record<number, string> = {
   1: `M250.72,38.42 L250.72,178.04 L222.2,178.04 L221.98,278.9 L70.49,279.02 L72.13,271.97 L86.85,208.6 L130.24,208.6 L130.4,38.42 L250.72,38.42 Z`,
@@ -110,19 +134,51 @@ export default function Unidades() {
   const [showExtendedPlan, setShowExtendedPlan] = useState(false)
   const [hoveredFloor, setHoveredFloor] = useState<number | string>('base')
   const [debugMode, setDebugMode] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Detectar si es mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Funciones para moverse entre unidades (arriba/abajo)
   const handleNextUnit = () => {
-    const currentIndex = units.findIndex(u => u.id === selectedUnit.id)
+    const currentIndex = units.findIndex((u) => u.id === selectedUnit.id)
     const nextIndex = (currentIndex + 1) % units.length
     setSelectedUnit(units[nextIndex])
   }
 
   const handlePrevUnit = () => {
-    const currentIndex = units.findIndex(u => u.id === selectedUnit.id)
+    const currentIndex = units.findIndex((u) => u.id === selectedUnit.id)
     const prevIndex = (currentIndex - 1 + units.length) % units.length
     setSelectedUnit(units[prevIndex])
   }
+
+  // Función para descargar el PDF
+  const handleDownload = () => {
+    const pdfUrl = `/unidades/${unitToPdfMap[selectedUnit.id]}`
+    window.open(pdfUrl, '_blank')
+  }
+
+  // Función para manejar el click en una unidad
+  const handleUnitClick = (unit: UnitData) => {
+    setSelectedUnit(unit)
+    setIsModalOpen(true)
+    console.log('Modal should open', { unit, isModalOpen: true }) // Debug log
+  }
+
+  useEffect(() => {
+    console.log('Modal state changed:', isModalOpen) // Debug log
+  }, [isModalOpen])
 
   // Manejo de teclas (Arriba/Abajo/Escape)
   useEffect(() => {
@@ -141,206 +197,213 @@ export default function Unidades() {
     }
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [selectedUnit, showExtendedPlan])
+  }, [handleNextUnit, handlePrevUnit, selectedUnit, showExtendedPlan])
 
   // Modo debug (Alt + D)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.altKey && e.key === 'd') {
-        setDebugMode(prev => !prev)
+        setDebugMode((prev) => !prev)
       }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
-  // Descarga del plano extendido
-  const handleDownload = async () => {
-    try {
-      const response = await fetch(`/unidades/plano_extendido_${selectedUnit.id}.jpg`)
-      const blob = await response.blob()
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `Plano_Unidad_${selectedUnit.id}_WaldHaus.jpg`
-      document.body.appendChild(a)
-      a.click()
-      document.body.removeChild(a)
-      window.URL.revokeObjectURL(url)
-    } catch (error) {
-      console.error('Error al descargar el plano:', error)
-    }
-  }
-
   return (
-    <section id="unidades" className="relative min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-0">
-      <div className="container mx-auto px-4 min-h-screen flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 w-full max-w-6xl mx-auto">
-          <div className='col-span-2'>
-            <h2
-              className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
-              style={{
-                fontFamily: "'Helvetica Now', sans-serif",
-                color: "#FFFFFF",
-              }}
+    <section
+      id="unidades"
+      className="relative lg:min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-0"
+    >
+      <h2
+        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
+        style={{
+          fontFamily: "'Helvetica Now', sans-serif",
+          color: "#FFFFFF",
+        }}
+      >
+        UNIDADES
+      </h2>
+
+      {/* Contenedor principal: alineado al centro y al fondo (bottom) */}
+      <div className="container mx-auto px-4 flex flex-row justify-center items-end md:pt-14">
+        {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
+        <div className="relative flex items-end justify-center w-[85%] lg:w-[40%] ">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative w-full aspect-[612.98/489.54] group"
+          >
+            {/* Contenedor principal escalado */}
+            <div
+              className="absolute inset-0"
+              style={{ transform: `scale(${isMobile ? 0.7 : 0.5})`, transformOrigin: 'bottom center' }}
             >
-              UNIDADES
-            </h2>
-          </div>
-          {/* ---------------- PLANO PRINCIPAL ---------------- */}
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="relative aspect-[612.98/489.54]  group"
-            >
-              {/* Contenedor principal escalado */}
-              <div className="absolute inset-0" style={{ transform: 'scale(0.5)', transformOrigin: 'center center' }}>
-                {/* Imagen base que siempre se muestra */}
-                <div className="absolute inset-0 pointer-events-none">
+              {/* Imagen base que siempre se muestra */}
+              <div className="absolute inset-0 pointer-events-none">
+                <Image
+                  src="/unidades/WALDHAUS-base.svg"
+                  alt="Plano base"
+                  fill
+                  className="object-contain"
+                  style={{
+                    filter: 'brightness(1.5) contrast(1.2) invert(1)',
+                    opacity: 0.8,
+                    transform: 'scale(1.3)',
+                  }}
+                  priority
+                />
+              </div>
+
+              {/* Imagen que se muestra al hover */}
+              {hoveredFloor !== 'base' && (
+                <div className="absolute inset-0">
                   <Image
-                    src="/unidades/WALDHAUS-base.svg"
-                    alt="Plano base"
+                    src={`/unidades/WALDHAUS-${hoveredFloor}.svg`}
+                    alt={`Plano piso ${hoveredFloor}`}
                     fill
                     className="object-contain"
                     style={{
                       filter: 'brightness(1.5) contrast(1.2) invert(1)',
-                      opacity: 0.8,
-                      transform: 'scale(1.3)', // Mantener la proporción original
+                      opacity: 0.3,
+                      mixBlendMode: 'screen',
                     }}
                     priority
                   />
                 </div>
+              )}
 
-                {/* Imagen que se muestra al hover */}
-                {hoveredFloor !== 'base' && (
-                  <div className="absolute inset-0">
-                    <Image
-                      src={`/unidades/WALDHAUS-${hoveredFloor}.svg`}
-                      alt={`Plano piso ${hoveredFloor}`}
-                      fill
-                      className="object-contain"
-                      style={{
-                        filter: `brightness(1.5) contrast(1.2) invert(1)`,
-                        opacity: 0.3,
-                        mixBlendMode: 'screen',
-                      }}
-                      priority
-                    />
-                  </div>
-                )}
+              {/* SVG interactivo */}
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 612.98 489.54"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                {[...units]
+                  .sort((a, b) => b.floor - a.floor)
+                  .map((unit) => {
+                    const pathD = floorPaths[unit.floor]
+                    const isSelected = selectedUnit.id === unit.id
+                    const isHovered = hoveredFloor === unit.floor
+                    return (
+                      <path
+                        key={unit.id}
+                        d={pathD}
+                        fill={isSelected || isHovered ? unit.color : 'transparent'}
+                        fillOpacity={isSelected || isHovered ? 0.3 : 0}
+                        stroke={
+                          isSelected || isHovered || debugMode
+                            ? unit.color
+                            : 'transparent'
+                        }
+                        strokeWidth={
+                          isSelected || isHovered || debugMode
+                            ? 2
+                            : 0
+                        }
+                        onMouseEnter={() => setHoveredFloor(unit.floor)}
+                        onMouseLeave={() => setHoveredFloor('base')}
+                        onClick={() => handleUnitClick(unit)}
+                        className="transition-all duration-300 cursor-pointer"
+                        style={{
+                          color: unit.color,
+                        }}
+                      />
+                    )
+                  })}
+              </svg>
+            </div>
+          </motion.div>
+        </div>
 
-                {/* SVG interactivo */}
-                <svg
-                  className="absolute inset-0 w-full h-full"
-                  viewBox="0 0 612.98 489.54"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  {[...units]
-                    .sort((a, b) => b.floor - a.floor)
-                    .map((unit) => {
-                      const pathD = floorPaths[unit.floor]
-                      const isSelected = selectedUnit.id === unit.id
-                      const isHovered = hoveredFloor === unit.floor
-                      return (
-                        <path
-                          key={unit.id}
-                          d={pathD}
-                          fill={isSelected || isHovered ? unit.color : 'transparent'}
-                          fillOpacity={isSelected || isHovered ? 0.3 : 0}
-                          stroke={isSelected || isHovered || debugMode ? unit.color : 'transparent'}
-                          strokeWidth={isSelected || isHovered || debugMode ? 2 : 0}
-                          onMouseEnter={() => setHoveredFloor(unit.floor)}
-                          onMouseLeave={() => setHoveredFloor('base')}
-                          onClick={() => {
-                            setSelectedUnit(unit)
-                          }}
-                          className="transition-all duration-300 cursor-pointer"
-                          style={{
-                            color: unit.color,
-                          }}
-                        />
-                      )
-                    })}
-                </svg>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* ---------------- INFO DE LA UNIDAD SELECCIONADA ---------------- */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex flex-col justify-center space-y-6 sm:space-y-8"
-          >
-            {/* Plano extendido (visible solo en desktop) */}
-            <div className="hidden sm:block bg-neutral-900/50 backdrop-blur-sm rounded-xl overflow-hidden">
-              <div className="relative aspect-[4/3] w-full">
+        {/* ---------------- INFO DE LA UNIDAD SELECCIONADA (PLANTILLA) ---------------- */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="hidden lg:flex flex-col justify-end items-center w-[45%] pb-[60px]"
+        >
+          {/* Plano extendido (visible solo en desktop) */}
+          <div className="relative w-full">
+            <div className="relative">
+              {isLoading && (
+                <div className="absolute inset-0 flex items-end justify-center z-10">
+                  <div className="w-12 h-12 border-4 border-neutral-600 border-t-white rounded-full animate-spin"></div>
+                </div>
+              )}
+              <div className="relative flex justify-center">
                 <Image
-                  src={`/unidades/plano_extendido_${selectedUnit.id}.jpg`}
-                  alt={`Plano extendido unidad ${selectedUnit.id}`}
-                  fill
-                  className="object-contain p-4"
+                  src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
+                  alt={`Plano unidad ${selectedUnit.id}`}
+                  width={662}
+                  height={468}
+                  className={`w-full h-auto scale-125 transition-opacity duration-300 ${
+                    isLoading ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  onLoadingComplete={() => setIsLoading(false)}
+                  onLoadStart={() => setIsLoading(true)}
                   priority
                 />
                 <button
                   onClick={handleDownload}
-                  className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-2 transition-colors"
+                  className="absolute -top-10 -right-14 bg-black/80 hover:bg-black text-white rounded-full p-2.5 transition-all duration-300 backdrop-blur-sm group"
                   aria-label="Descargar plano"
                 >
-                  <ArrowDownTrayIcon className="w-5 h-5" />
+                  <ArrowDownTrayIcon className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
                 </button>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* ---------------- MODAL DE PLANO EXTENDIDO (solo mobile) ---------------- */}
       <AnimatePresence>
-        {showExtendedPlan && (
-          <div className="sm:hidden">
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsModalOpen(false)}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 lg:hidden"
+          >
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-2xl bg-transparent rounded-lg overflow-hidden"
             >
-              <motion.div
-                initial={{ scale: 0.95 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.95 }}
-                className="relative w-full max-w-5xl aspect-[4/3] bg-neutral-900 rounded-2xl overflow-hidden"
-              >
+              {isLoading && (
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="w-12 h-12 border-4 border-neutral-600 border-t-white rounded-full animate-spin"></div>
+                </div>
+              )}
+              <div className="relative aspect-[662/468]">
                 <Image
-                  src={`/unidades/plano_extendido_${selectedUnit.id}.jpg`}
-                  alt={`Plano extendido unidad ${selectedUnit.id}`}
-                  fill
-                  className="object-contain p-4"
+                  src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
+                  alt={`Plano unidad ${selectedUnit.id}`}
+                  width={662}
+                  height={468}
+                  className={`w-full h-full object-contain transition-opacity duration-300 ${
+                    isLoading ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  onLoadingComplete={() => setIsLoading(false)}
+                  onLoadStart={() => setIsLoading(true)}
                   priority
                 />
-
-                <div className="absolute top-4 right-4 flex gap-2">
-                  {/* Botón de descarga */}
-                  <button
-                    onClick={handleDownload}
-                    className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-2 transition-colors"
-                    aria-label="Descargar plano"
-                  >
-                    <ArrowDownTrayIcon className="w-5 h-5" />
-                  </button>
-                  {/* Botón de cierre */}
-                  <button
-                    onClick={() => setShowExtendedPlan(false)}
-                    className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-2 transition-colors"
-                    aria-label="Cerrar plano extendido"
-                  >
-                    <XMarkIcon className="w-5 h-5" />
-                  </button>
-                </div>
-              </motion.div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handleDownload()
+                  }}
+                  className="absolute top-4 right-4 bg-black/80 hover:bg-black text-white rounded-full p-2.5 transition-all duration-300 backdrop-blur-sm group"
+                  aria-label="Descargar plano"
+                >
+                  <ArrowDownTrayIcon className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
+                </button>
+              </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>
