@@ -9,32 +9,32 @@ import { useMediaQuery } from "react-responsive";
 const slides = [
     {
         id: 1,
-        image: "/Slider/1.jpg", 
+        image: "/Slider/1.jpg",
         alt: "Imagen 1",
     },
     {
         id: 2,
-        image: "/Slider/2.jpg", 
+        image: "/Slider/2.jpg",
         alt: "Imagen 2",
     },
     {
         id: 3,
-        image: "/Slider/3.jpg", 
+        image: "/Slider/3.jpg",
         alt: "Imagen 3",
     },
     {
         id: 4,
-        image: "/Slider/4.jpg", 
+        image: "/Slider/4.jpg",
         alt: "Imagen 1",
     },
     {
         id: 5,
-        image: "/Slider/5.jpg", 
+        image: "/Slider/5.jpg",
         alt: "Imagen 2",
     },
     {
         id: 6,
-        image: "/Slider/6.jpg", 
+        image: "/Slider/6.jpg",
         alt: "Imagen 3",
     },
 ];
@@ -81,7 +81,7 @@ export default function Concepto() {
             const rect = imageRef.current.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
-            
+
             setZoomPosition({
                 x: x,
                 y: y,
@@ -141,17 +141,21 @@ export default function Concepto() {
         <section className="relative bg-black text-white font-sans pb-16 sm:pb-20 md:pb-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
                 {/* Título estilizado */}
-                <div className="text-center pb-4 sm:pb-6 md:pb-8 mx-auto">
-                    <img
-                        src="/elegancia-title.png"
-                        alt="Elegancia austera"
-                        className="object-contain aspect-video mx-auto w-full max-w-[80%] sm:max-w-[70%] md:max-w-full"
-                    />
+                <div>
+                    <h3
+                        className="text-center text-white font-bold py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36 text-[44px] sm:text-[60px] md:text-[80px] lg:text-[100px] xl:text-[120px]"
+                        style={{
+                            fontFamily: 'HelloJanuary, sans-serif',
+                            fontWeight: 400
+                        }}
+                    >
+                        Elegancia austera
+                    </h3>
                 </div>
 
                 {/* Slider */}
                 <div className="relative w-full  mx-auto md:px-10 ">
-                    <div 
+                    <div
                         ref={sliderRef}
                         className="relative bg-black text-white h-[600px] md:h-[900px] w-full mb-8 sm:mb-12 md:mb-16 overflow-hidden touch-pan-y"
                         onMouseMove={handleMagnify}
@@ -184,7 +188,7 @@ export default function Concepto() {
                                     alt={slides[currentSlide].alt}
                                     className={`w-full h-full object-cover ${!isMobile && isZoomed ? 'cursor-none' : ''}`}
                                 />
-                                
+
                                 {/* Magnifying glass */}
                                 {isZoomed && !isMobile && (
                                     <div
@@ -269,19 +273,19 @@ export default function Concepto() {
                                 whileTap={{ scale: 0.9 }}
                             >
                                 <div className="relative">
-                                    <div 
+                                    <div
                                         className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 
-                                        ${index === currentSlide 
-                                            ? "bg-white scale-100" 
-                                            : "bg-white/30 scale-75 hover:bg-white/50"
-                                        }`}
+                                        ${index === currentSlide
+                                                ? "bg-white scale-100"
+                                                : "bg-white/30 scale-75 hover:bg-white/50"
+                                            }`}
                                     />
-                                    <div 
+                                    <div
                                         className={`absolute inset-0 rounded-full transition-all duration-300
-                                        ${index === currentSlide 
-                                            ? "ring-2 ring-white ring-offset-2 ring-offset-black" 
-                                            : ""
-                                        }`}
+                                        ${index === currentSlide
+                                                ? "ring-2 ring-white ring-offset-2 ring-offset-black"
+                                                : ""
+                                            }`}
                                     />
                                 </div>
                             </motion.div>
@@ -304,12 +308,9 @@ export default function Concepto() {
 
                         <p
                             className=" md:text-[14.2px] leading-relaxed text-sm sm:text-base"
-                            
+
                         >
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar hac ridiculus mauris,
-                            dignissim luctus libero ullamcorper risus fermentum duis blandit socios litora porttitor.
-                            Pellentesque ligula sodales egestas primis fames tempus habitasse curae nostra accumsan
-                            praesent class platea.
+                            La naturaleza se despliega como un lienzo vivo. Waldhaus Residences se emplaza estratégicamente al pie del cerro, donde las montañas envuelven el día con su serenidad y belleza. Todas las unidades cuentan con balcones amplios y confortables para admirar estas vistas únicas.
                         </p>
                     </div>
                     <div className="flex items-center mt-4 md:mt-0">
@@ -339,12 +340,9 @@ export default function Concepto() {
                         </h2>
                         <p
                             className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
-                            
+
                         >
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar hac ridiculus mauris,
-                            dignissim luctus libero ullamcorper risus fermentum duis blandit socios litora porttitor.
-                            Pellentesque ligula sodales egestas primis fames tempus habitasse curae nostra accumsan
-                            praesent class platea.
+                            Waldhaus Residences redefine el concepto de vida Premium en el eje Yerba Buena-San Pablo. Con accesibilidad privilegiada, vistas abiertas y diseño superior, ofrece unidades luminosas con terrazas, áreas comunes exclusivas y materiales de alta calidad, ideales para quienes valoran la elegancia en los detalles.
                         </p>
                     </div>
                 </div>

@@ -226,8 +226,8 @@ export default function Unidades() {
       </h2>
 
       {/* Contenedor principal: alineado al centro y al fondo (bottom) */}
-      <div className="container mx-auto px-4 flex flex-row justify-center items-end md:pt-14">
-        {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
+      <div className="container mx-auto md:mx-0 px-4 md:pl-4 md:px-0 flex flex-row justify-center items-end md:pt-14">
+      {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
         <div className="relative flex items-end justify-center w-[85%] lg:w-[40%] ">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

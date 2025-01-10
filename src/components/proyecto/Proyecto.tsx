@@ -26,7 +26,7 @@ export default function Proyecto() {
                         className="w-full lg:w-[35%] xl:w-[700px] aspect-[368/243] object-cover"
                     />
                 </div>
-                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 leading-relaxed space-y-4 leading-relaxed text-sm sm:text-base font-extralight">
+                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 space-y-4 leading-relaxed text-sm sm:text-base font-extralight md:text-[14.2px]">
                     <p>
                         Waldhaus se desarrolla sobre un terreno irregular.<br />
                         Tiene la particularidad de estar frente a la ruta 339, pero también sobre un camino vecinal más privado, más íntimo por el cual se puede ingresar.<br />

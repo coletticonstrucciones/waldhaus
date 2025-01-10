@@ -41,7 +41,7 @@ export default function Estudio() {
               />
             </div>
             <div className="space-y-6 sm:space-y-8 lg:col-span-3 px-0 sm:px-6 lg:px-10">
-              <p className="leading-relaxed text-sm sm:text-base font-extralight">
+              <p className="leading-relaxed text-sm sm:text-base font-extralight md:text-[14.2px]">
                 Somos una empresa de servicios profesionales integrados, especializada en el sector inmobiliario. Nuestro equipo de expertos se compone de arquitectos, ingenieros, especialistas en finanzas, administración y abogados, para facilitarles oportunidades a nuestros inversores.
                 <br />
                 <br />
