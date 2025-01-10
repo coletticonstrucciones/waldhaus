@@ -26,15 +26,16 @@ export default function Proyecto() {
                         className="w-full lg:w-[35%] xl:w-[700px] aspect-[368/243] object-cover"
                     />
                 </div>
-                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 space-y-4 leading-relaxed text-sm sm:text-base font-extralight md:text-[14.2px]">
+                <article className="px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 leading-relaxed text-sm sm:text-base font-extralight md:text-[14.2px] max-w-[960px] me-auto">
                     <p>
-                        Waldhaus se desarrolla sobre un terreno irregular.<br />
-                        Tiene la particularidad de estar frente a la ruta 339, pero también sobre un camino vecinal más privado, más íntimo por el cual se puede ingresar.<br />
-                        Se tomó un sector del terreno y bajo un eje ordenador se ubicaron dos volúmenes iguales, pero rotados.<br />
-                        Este eje y las dos torres desplazadas permite generar dos sectores claramente definidos.<br />
-                        Por un lado el sector de acceso peatonal y vehicular, por el que se accede a un gran estacionamiento subterráneo y por otro lado un ámbito de esparcimiento, jardines y pileta.<br />
-                        Las torres están rodeadas de grandes terrazas con asadores privados.<br />
-                        Creo que para quienes desean vivir en un ámbito de buena arquitectura, de una elegancia austera, y fundamentalmente de mucha calidad, este es probablemente el lugar indicado.
+                        Waldhaus se emplaza sobre un terreno con características únicas, combinando accesibilidad y privacidad. Waldhausfrente a la Ruta 339 y conectado también por un camino vecinal más íntimo, el proyecto aprovecha esta dualidad para ofrecer una experiencia equilibrada entre lo práctico y lo exclusivo.
+                    </p>
+                    <br />
+                    <p>Dos volúmenes simétricos, dispuestos de manera rotada y organizados por un eje central, dividen el terreno en áreas funcionales. Al sur, se encuentra el acceso peatonal y vehicular que conduce a un amplio estacionamiento subterráneo. Al norte, un espacio dedicado al esparcimiento, con jardines y una piscina, crea un entorno relajado y armónico.
+                    </p>
+                    <br />
+                    <p>
+                        Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia discreta y materiales de alta calidad.
                     </p>
                 </article>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 sm:mt-12 md:mt-16 px-4 sm:px-8 md:px-12 lg:px-20">

@@ -76,20 +76,20 @@ export default function Ubicacion() {
                     {/* Primera columna */}
                     <div className="flex flex-col justify-between border-b md:border-b-0 md:border-r border-gray-600 pb-6 md:pb-0 md:pr-6 leading-relaxed text-sm sm:text-base font-extralight  md:text-[14.2px]">
                         <p className="mb-4 sm:mb-6 md:mb-8">
-                            Woods Bagot - International architecture firm based in Adelaide, South Australia. Specializes in the design and planning of buildings in a wide variety of sectors and disciplines.
+                            <b>_Zona residencial en auge:</b> Forma parte de un área con gran potencial de desarrollo, ideal para un proyecto de vida.
                         </p>
                         <p>
-                            The main problem of the current site is that it does not reflect high level of competence and modernity of this architectural bureau. The content is not well structured for quick and easy reading. The challenge was to correct these shortcomings.
+                            <b>_Accesibilidad privilegiada:</b> Su cercanía a Yerba Buena y conexión a través de la Ruta 339 aseguran un acceso rápido y conveniente.
                         </p>
                     </div>
 
                     {/* Segunda columna */}
                     <div className="flex flex-col justify-between border-gray-600 pb-6 md:pb-0 md:pr-6 leading-relaxed text-sm sm:text-base font-extralight  md:text-[14.2px]">
                         <p className="mb-4 sm:mb-6 md:mb-8">
-                            Woods Bagot is now established worldwide, with studios in six regions: Southeast Asia, China, Australia & NZ, Europe, the Middle East, and North America.
+                            <b>_Entorno exclusivo:</b> Frente a una de las mejores canchas de golf de Tucumán, lo que suma un atractivo para los amantes de este deporte.
                         </p>
                         <p>
-                            The design is made in a minimalist style, with work done with accents. Layouts are designed with dark modern style by default and the ability to switch to light mode. These solutions were chosen to complete the main task.
+                            <b>_Conexión con la naturaleza:</b> Rodeado de un entorno residencial tranquilo y paisajes naturales al pie del cerro.
                         </p>
                     </div>
                 </div>
