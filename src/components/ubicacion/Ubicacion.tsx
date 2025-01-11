@@ -98,28 +98,20 @@ export default function Ubicacion() {
             {/* Contenedor del video */}
             <div className="relative z-10 bg-black pt-8 sm:pt-12 md:pt-16 pb-16">
                 <div className="relative w-full max-w-5xl mx-auto">
-                    <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <button className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/70 rounded-full flex items-center justify-center hover:bg-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-black"
-                            >
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </button>
+                    {/* Contenedor del video con proporción 16:9 */}
+                    <div className="relative w-full h-0 pb-[56.25%]">
+                        <iframe
+                            className="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/IevKmIL_NXw?autoplay=1&controls=1"
+                            title="YouTube video"
+                            allow="autoplay; fullscreen"
+                            allowFullScreen
+                        ></iframe>
                     </div>
-                    <video
-                        src="URL_DE_TU_VIDEO"
-                        poster="URL_DE_LA_IMAGEN_POSTER"
-                        controls
-                        className="min-w-full h-[300px] sm:h-[450px] md:h-[600px] object-cover rounded-lg bg-black"
-                    >
-                        Tu navegador no soporta la reproducción de videos.
-                    </video>
                 </div>
             </div>
+
+
         </section>
     );
 }
