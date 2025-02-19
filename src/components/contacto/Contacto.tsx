@@ -6,7 +6,7 @@ export default function Contacto() {
     <section id="contacto" className="bg-black text-white py-12 sm:py-16 md:py-24 min-h-screen flex flex-col justify-end">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col items-center gap-8 sm:gap-12 md:gap-16 pb-6 sm:pb-8 md:pb-12">
         <h1 className="text-4xl lg:text-6xl tracking-[0.3em] sm:tracking-[0.4em] md:tracking-[0.5em] font-light text-center">
-          COLETTI.COM
+          COLETTI.COM.AR
         </h1>
 
         <div className="w-full max-w-sm sm:max-w-2xl md:max-w-4xl">

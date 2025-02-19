@@ -31,7 +31,7 @@ export default function Estudio() {
           Estudio
         </h2>
         <div className="flex flex-col gap-8 sm:gap-12 md:gap-16">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-start">
+          <div className="">
             <div className="relative w-full object-cover lg:col-span-2">
               <Image
                 src="/colleti-espalda.png"

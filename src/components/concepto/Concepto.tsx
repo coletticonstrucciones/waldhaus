@@ -141,12 +141,17 @@ export default function Concepto() {
         <section className="relative bg-black text-white font-sans pb-16 sm:pb-20 md:pb-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
                 {/* Título estilizado */}
-                <div>
+                <div className="relative pt-20">
+                    <img 
+                        src="/colleti-logo.png"
+                        alt="Coletti Logo"
+                        className="mx-auto mb-8 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px]"
+                    />
                     <h3
-                        className="text-center text-white font-bold py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36 text-[44px] sm:text-[60px] md:text-[80px] lg:text-[100px] xl:text-[120px]"
+                        className="text-center text-white font-bold pb-20 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36 text-2xl sm:text-3xl md:text-4xl lg:text-6xl uppercase"
                         style={{
-                            fontFamily: 'HelloJanuary, sans-serif',
-                            fontWeight: 400
+                            fontFamily: 'Times New Roman, serif',
+                            fontWeight: 'bold'
                         }}
                     >
                         Elegancia austera

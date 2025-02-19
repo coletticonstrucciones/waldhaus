@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
@@ -216,7 +217,7 @@ export default function Unidades() {
       className="relative lg:min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-0"
     >
       <h2
-        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
+        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28"
         style={{
           fontFamily: "'Helvetica Now', sans-serif",
           color: "#FFFFFF",
@@ -226,19 +227,25 @@ export default function Unidades() {
       </h2>
 
       {/* Contenedor principal: alineado al centro y al fondo (bottom) */}
-      <div className="container mx-auto md:mx-0 px-4 md:pl-4 md:px-0 flex flex-row justify-center items-end md:pt-14">
-      {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
-        <div className="relative flex items-end justify-center w-[85%] lg:w-[40%] ">
+      <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+        {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
+        <div className="relative flex items-center justify-center w-full max-w-[780px] lg:scale-[1.15] scale-[1.4] mt-8 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="relative w-full aspect-[612.98/489.54] group"
           >
+            {/* Efecto de glow */}
+            <div 
+              className="absolute inset-0 blur-[2px] opacity-50"
+              style={{ 
+                background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)',
+                transform: 'scale(1.5)',
+              }}
+            />
+            
             {/* Contenedor principal escalado */}
-            <div
-              className="absolute inset-0"
-              style={{ transform: `scale(${isMobile ? 0.7 : 0.5})`, transformOrigin: 'bottom center' }}
-            >
+            <div className="absolute inset-0" style={{ transform: 'scale(0.585)', transformOrigin: 'center center' }}>
               {/* Imagen base que siempre se muestra */}
               <div className="absolute inset-0 pointer-events-none">
                 <Image
@@ -247,8 +254,8 @@ export default function Unidades() {
                   fill
                   className="object-contain"
                   style={{
-                    filter: 'brightness(1.5) contrast(1.2) invert(1)',
-                    opacity: 0.8,
+                    // filter: 'brightness(1.2) contrast(1.2) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.3))',
+                    opacity: 1,
                     transform: 'scale(1.3)',
                   }}
                   priority
@@ -264,9 +271,9 @@ export default function Unidades() {
                     fill
                     className="object-contain"
                     style={{
-                      filter: 'brightness(1.5) contrast(1.2) invert(1)',
-                      opacity: 0.3,
-                      mixBlendMode: 'screen',
+                      // filter: 'brightness(1.2) contrast(1.2) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.3))',
+                      opacity: 1,
+                      mixBlendMode: 'normal',
                     }}
                     priority
                   />
@@ -289,17 +296,17 @@ export default function Unidades() {
                       <path
                         key={unit.id}
                         d={pathD}
-                        fill={isSelected || isHovered ? unit.color : 'transparent'}
-                        fillOpacity={isSelected || isHovered ? 0.3 : 0}
+                        fill={isSelected || isHovered ? unit.color : 'rgba(255,255,255,0.1)'}
+                        fillOpacity={isSelected || isHovered ? 0.4 : 0.1}
                         stroke={
                           isSelected || isHovered || debugMode
                             ? unit.color
-                            : 'transparent'
+                            : 'rgba(255,255,255,0.3)'
                         }
                         strokeWidth={
                           isSelected || isHovered || debugMode
                             ? 2
-                            : 0
+                            : 1
                         }
                         onMouseEnter={() => setHoveredFloor(unit.floor)}
                         onMouseLeave={() => setHoveredFloor('base')}
@@ -315,48 +322,9 @@ export default function Unidades() {
             </div>
           </motion.div>
         </div>
-
-        {/* ---------------- INFO DE LA UNIDAD SELECCIONADA (PLANTILLA) ---------------- */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="hidden lg:flex flex-col justify-end items-center w-[45%] pb-[60px]"
-        >
-          {/* Plano extendido (visible solo en desktop) */}
-          <div className="relative w-full">
-            <div className="relative">
-              {isLoading && (
-                <div className="absolute inset-0 flex items-end justify-center z-10">
-                  <div className="w-12 h-12 border-4 border-neutral-600 border-t-white rounded-full animate-spin"></div>
-                </div>
-              )}
-              <div className="relative flex justify-center">
-                <Image
-                  src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
-                  alt={`Plano unidad ${selectedUnit.id}`}
-                  width={662}
-                  height={468}
-                  className={`w-full h-auto scale-125 transition-opacity duration-300 ${
-                    isLoading ? 'opacity-0' : 'opacity-100'
-                  }`}
-                  onLoadingComplete={() => setIsLoading(false)}
-                  onLoadStart={() => setIsLoading(true)}
-                  priority
-                />
-                <button
-                  onClick={handleDownload}
-                  className="absolute -top-10 -right-14 bg-black/80 hover:bg-black text-white rounded-full p-2.5 transition-all duration-300 backdrop-blur-sm group"
-                  aria-label="Descargar plano"
-                >
-                  <ArrowDownTrayIcon className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
-      {/* ---------------- MODAL DE PLANO EXTENDIDO (solo mobile) ---------------- */}
+      {/* ---------------- MODAL DE PLANO EXTENDIDO ---------------- */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
@@ -364,14 +332,14 @@ export default function Unidades() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 lg:hidden"
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl bg-transparent rounded-lg overflow-hidden"
+              className="relative w-full max-w-3xl bg-transparent rounded-lg overflow-hidden"
             >
               {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center z-10">

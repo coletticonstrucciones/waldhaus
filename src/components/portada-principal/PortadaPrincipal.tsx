@@ -62,7 +62,7 @@ export default function PortadaPrincipal() {
                 }}
             >
                 <img
-                    src="/home.jpg"
+                    src="/slider/1.jpg"
                     alt="Fondo principal"
                     className="w-full h-full object-cover brightness-[0.6]"
                 />
