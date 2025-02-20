@@ -6,7 +6,7 @@ export default function Proyecto() {
         <section id="proyecto" className="relative text-white font-sans min-h-screen bg-black">
             <div className='px-4 sm:px-8 md:px-12 lg:px-20 mx-auto'>
                 <h2
-                    className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20  pb-8 sm:pb-12 md:pb-16"
+                    className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20  pb-8 sm:pb-12 md:pb-8"
                     style={{
                         fontFamily: "'Helvetica Now', sans-serif",
                         color: "#FFFFFF",
@@ -16,9 +16,9 @@ export default function Proyecto() {
                 </h2>
                 <div className='flex justify-between items-center px-0 sm:px-4 md:px-8 lg:px-20 max-w-5xl mx-auto'>
                     <img
-                        src="/Proyecto/boceto-firma.png"
+                        src="/Proyecto/boceto-firma.svg"
                         alt="boceto-colleti"
-                        className="w-full  aspect-[368/243] object-cover"
+                        className="w-full object-cover"
                     />
                 </div>
                 <article className="px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-base sm:text-lg font-extralight md:text-xl max-w-4xl mx-auto text-center">
@@ -34,17 +34,17 @@ export default function Proyecto() {
                     {/* Sección 1: Texto e Imagen */}
                     <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
                         <h2
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
+                            className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter"
+                            style={{lineHeight: "0.8"}}
                         >
                             about&nbsp;&nbsp;&nbsp;the
                             <br />
-                            <span>view_</span>
+                            <span>view</span>
                         </h2>
 
                         <p
-                            className=" md:text-lg leading-relaxed text-sm sm:text-base"
-
+                            className="text-gray-300 text-xl font-light leading-relaxed"
+                            style={{lineHeight: "1.2"}}
                         >
                             La naturaleza se despliega como un lienzo vivo. Waldhaus Residences se emplaza estratégicamente al pie del cerro, donde las montañas envuelven el día con su serenidad y belleza. Todas las unidades cuentan con balcones amplios y confortables para admirar estas vistas únicas.
                         </p>
@@ -67,16 +67,16 @@ export default function Proyecto() {
                     </div>
                     <div className="flex flex-col justify-between space-y-4 sm:space-y-6 order-1 md:order-2">
                         <h2
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
+                            className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter"
+                            style={{lineHeight: "0.8"}}
                         >
                             about&nbsp;&nbsp;&nbsp;the
                             <br />
-                            <span>services_</span>
+                            <span>services</span>
                         </h2>
                         <p
-                            className="text-sm sm:text-base md:text-lg leading-relaxed"
-
+                            className="text-gray-300 text-xl font-light leading-relaxed"
+                            style={{lineHeight: "1.2"}}
                         >
                             Waldhaus Residences redefine el concepto de vida Premium en el eje Yerba Buena-San Pablo. Con accesibilidad privilegiada, vistas abiertas y diseño superior, ofrece unidades luminosas con terrazas, áreas comunes exclusivas y materiales de alta calidad, ideales para quienes valoran la elegancia en los detalles.
                         </p>

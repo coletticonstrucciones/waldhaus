@@ -214,10 +214,10 @@ export default function Unidades() {
   return (
     <section
       id="unidades"
-      className="relative lg:min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-0"
+      className="relative  bg-black text-white overflow-hidden py-24 md:pt-0"
     >
       <h2
-        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28"
+        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] text-center pt-16 sm:pt-20 md:pt-28"
         style={{
           fontFamily: "'Helvetica Now', sans-serif",
           color: "#FFFFFF",
@@ -227,9 +227,9 @@ export default function Unidades() {
       </h2>
 
       {/* Contenedor principal: alineado al centro y al fondo (bottom) */}
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-0 justify-center h-fit">
         {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
-        <div className="relative flex items-center justify-center w-full max-w-[780px] lg:scale-[1.15] scale-[1.4] mt-8 lg:mt-0">
+        <div className="relative flex items-center justify-center w-full max-w-[780px] lg:scale-75 scale-[1.4] mt-8 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -254,7 +254,6 @@ export default function Unidades() {
                   fill
                   className="object-contain"
                   style={{
-                    // filter: 'brightness(1.2) contrast(1.2) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.3))',
                     opacity: 1,
                     transform: 'scale(1.3)',
                   }}
@@ -271,7 +270,6 @@ export default function Unidades() {
                     fill
                     className="object-contain"
                     style={{
-                      // filter: 'brightness(1.2) contrast(1.2) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.3))',
                       opacity: 1,
                       mixBlendMode: 'normal',
                     }}
@@ -310,7 +308,13 @@ export default function Unidades() {
                         }
                         onMouseEnter={() => setHoveredFloor(unit.floor)}
                         onMouseLeave={() => setHoveredFloor('base')}
-                        onClick={() => handleUnitClick(unit)}
+                        onClick={() => {
+                          if (isMobile) {
+                            handleUnitClick(unit)
+                          } else {
+                            setSelectedUnit(unit)
+                          }
+                        }}
                         className="transition-all duration-300 cursor-pointer"
                         style={{
                           color: unit.color,
@@ -322,11 +326,39 @@ export default function Unidades() {
             </div>
           </motion.div>
         </div>
+
+        {/* Unidad seleccionada en desktop */}
+        {!isMobile && (
+          <div className="w-full max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              key={selectedUnit.id}
+              className="relative aspect-[662/468] bg-transparent rounded-lg overflow-hidden"
+            >
+              <Image
+                src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
+                alt={`Plano unidad ${selectedUnit.id}`}
+                width={662}
+                height={468}
+                className="w-full h-full object-contain"
+                priority
+              />
+              <button
+                onClick={handleDownload}
+                className="absolute top-4 right-4 bg-black/80 hover:bg-black text-white rounded-full p-2.5 transition-all duration-300 backdrop-blur-sm group"
+                aria-label="Descargar plano"
+              >
+                <ArrowDownTrayIcon className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
+              </button>
+            </motion.div>
+          </div>
+        )}
       </div>
 
-      {/* ---------------- MODAL DE PLANO EXTENDIDO ---------------- */}
+      {/* Modal solo para mobile */}
       <AnimatePresence>
-        {isModalOpen && (
+        {isModalOpen && isMobile && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
