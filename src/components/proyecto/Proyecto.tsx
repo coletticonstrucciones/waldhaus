@@ -6,7 +6,7 @@ export default function Proyecto() {
         <section id="proyecto" className="relative text-white font-sans min-h-screen bg-black">
             <div className='px-4 sm:px-8 md:px-12 lg:px-20 mx-auto'>
                 <h2
-                    className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16"
+                    className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16 sm:pt-20  pb-8 sm:pb-12 md:pb-16"
                     style={{
                         fontFamily: "'Helvetica Now', sans-serif",
                         color: "#FFFFFF",
@@ -14,14 +14,14 @@ export default function Proyecto() {
                 >
                     Proyecto
                 </h2>
-                <div className='flex justify-between items-center px-0 sm:px-4 md:px-8 lg:px-20'>
+                <div className='flex justify-between items-center px-0 sm:px-4 md:px-8 lg:px-20 max-w-5xl mx-auto'>
                     <img
                         src="/Proyecto/boceto-firma.png"
                         alt="boceto-colleti"
                         className="w-full  aspect-[368/243] object-cover"
                     />
                 </div>
-                <article className="px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-sm sm:text-base font-extralight md:text-[14.2px]">
+                <article className="px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-base sm:text-lg font-extralight md:text-xl max-w-4xl mx-auto text-center">
                     <p>
                         Dos volúmenes simétricos de manera rotada y organizados por un eje central, dividen el terreno en áreas funcionales. Al sur, se encuentra el acceso peatonal y vehicular que conduce a un amplio estacionamiento subterráneo. Al norte, un espacio dedicado al esparcimiento con jardines y una piscina, crea un entorno relajado y armónico.
                     </p>
@@ -29,7 +29,60 @@ export default function Proyecto() {
                     <p>Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia austera y materiales de alta calidad.
                     </p>
                 </article>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 mt-8 sm:mt-12 md:mt-16">
+                {/* Contenido adicional */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12  w-full max-w-7xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+                    {/* Sección 1: Texto e Imagen */}
+                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
+                        <h2
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
+                        >
+                            about&nbsp;&nbsp;&nbsp;the
+                            <br />
+                            <span>view_</span>
+                        </h2>
+
+                        <p
+                            className=" md:text-lg leading-relaxed text-sm sm:text-base"
+
+                        >
+                            La naturaleza se despliega como un lienzo vivo. Waldhaus Residences se emplaza estratégicamente al pie del cerro, donde las montañas envuelven el día con su serenidad y belleza. Todas las unidades cuentan con balcones amplios y confortables para admirar estas vistas únicas.
+                        </p>
+                    </div>
+                    <div className="flex items-center mt-4 md:mt-0">
+                        <img
+                            src="/about-the-view.png"
+                            alt="Vista secundaria"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    {/* Sección 2: Imagen y Texto */}
+                    <div className="flex items-center order-2 md:order-1">
+                        <img
+                            src="about-the-services.png"
+                            alt="Servicios secundarios"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6 order-1 md:order-2">
+                        <h2
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
+                        >
+                            about&nbsp;&nbsp;&nbsp;the
+                            <br />
+                            <span>services_</span>
+                        </h2>
+                        <p
+                            className="text-sm sm:text-base md:text-lg leading-relaxed"
+
+                        >
+                            Waldhaus Residences redefine el concepto de vida Premium en el eje Yerba Buena-San Pablo. Con accesibilidad privilegiada, vistas abiertas y diseño superior, ofrece unidades luminosas con terrazas, áreas comunes exclusivas y materiales de alta calidad, ideales para quienes valoran la elegancia en los detalles.
+                        </p>
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 my-8 sm:my-12 md:my-16">
                     {/* Tarjetas de imágenes */}
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img

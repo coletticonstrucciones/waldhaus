@@ -66,3 +66,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--foreground) var(--background);
 }
+
+body{
+  background: #000000;
+}

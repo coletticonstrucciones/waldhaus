@@ -145,16 +145,15 @@ export default function Concepto() {
                     <img 
                         src="/colleti-logo.png"
                         alt="Coletti Logo"
-                        className="mx-auto mb-8 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px]"
+                        className="mx-auto w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px]"
                     />
                     <h3
-                        className="text-center text-white font-bold pb-20 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36 text-2xl sm:text-3xl md:text-4xl lg:text-6xl uppercase"
+                        className="text-center text-white pb-20 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36 text-2xl sm:text-3xl md:text-4xl lg:text-6xl uppercase tracking-tighter"
                         style={{
                             fontFamily: 'Times New Roman, serif',
-                            fontWeight: 'bold'
                         }}
                     >
-                        Elegancia austera
+                        Elegancia&nbsp;&nbsp;austera
                     </h3>
                 </div>
 

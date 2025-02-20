@@ -240,7 +240,7 @@ export default function Unidades() {
               className="absolute inset-0 blur-[2px] opacity-50"
               style={{ 
                 background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)',
-                transform: 'scale(1.5)',
+                transform: 'scale(0.78)',
               }}
             />
             
