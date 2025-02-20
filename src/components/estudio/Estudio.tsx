@@ -19,8 +19,8 @@ export default function Estudio() {
   ]
 
   return (
-    <section id="estudio" className="bg-black text-white pb-12 sm:pb-16 md:pb-24 min-h-screen">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+    <section id="estudio" className="bg-black text-white font-sans pb-12 sm:pb-16 md:pb-24 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
         <h2
           className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] mb-4 sm:mb-6 md:mb-8 text-center pt-16  pb-8 sm:pb-12 md:pb-16"
           style={{
@@ -40,11 +40,11 @@ export default function Estudio() {
                 className="w-full aspect-[25/37] object-cover"
               />
             </div>
-            <div className="space-y-6 sm:space-y-8 lg:col-span-3 px-0 sm:px-6 lg:px-10 max-w-5xl mx-auto">
-              <p className="leading-relaxed text-sm sm:text-base font-extralight md:text-[14.2px]">
-                Somos una empresa de servicios profesionales integrados, especializada en el sector inmobiliario. Nuestro equipo de expertos se compone de arquitectos, ingenieros, especialistas en finanzas, administración y abogados, para facilitarles oportunidades a nuestros inversores.
-                <br />
-                <br />
+            <div className="flex flex-col justify-between space-y-4 sm:space-y-6 lg:col-span-3 px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-base sm:text-lg font-light md:text-xl max-w-4xl mx-auto text-center ">
+              <p
+                className="text-gray-300 text-xl font-light leading-relaxed text-center"
+                style={{ lineHeight: "1.2" }}
+              >
                 Somos una empresa de servicios profesionales integrados, especializada en el sector inmobiliario. Proporcionamos a nuestros clientes e inversores oportunidades para potenciar el valor de sus operaciones a través de la propiedad, el alquiler o la inversión en inmuebles.
                 Con equipos de trabajo interdisciplinarios desarrollamos y evaluamos proyectos de inversión y definimos las necesidades principales de nuestros clientes.
               </p>
@@ -59,7 +59,7 @@ export default function Estudio() {
                       />
                     )}
                   </span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -78,7 +78,7 @@ export default function Estudio() {
                       />
                     )}
                   </span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.7 }}
@@ -97,7 +97,7 @@ export default function Estudio() {
                       />
                     )}
                   </span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.9 }}
@@ -116,7 +116,7 @@ export default function Estudio() {
                       />
                     )}
                   </span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 1.1 }}

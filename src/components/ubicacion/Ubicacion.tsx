@@ -72,7 +72,7 @@ export default function Ubicacion() {
                 </div>
 
                 {/* Contenedor de mapa y plano */}
-                <div className="w-full max-w-7xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+                <div className="w-full max-w-7xl mx-auto mt-12 ">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         {/* Mapa de Google */}
                         <div className="bg-gray-950 overflow-hidden">
@@ -101,15 +101,15 @@ export default function Ubicacion() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 text-white bg-black p-3 md:p-8 max-w-7xl mx-auto mt-8 sm:my-12 md:my-16">
                     {/* Primera columna */}
                     <div className="space-y-6">
-                        <div className="h-[200px] flex flex-col">
+                        <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
                             <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Zona residencial<br/> en auge</h3>
-                            <p className="text-gray-300 text-xl max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
                                 Forma parte de un área con gran potencial de desarrollo, ideal para un proyecto de vida.
                             </p>
                         </div>
-                        <div className="h-[200px] flex flex-col">
+                        <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
                             <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Accesibilidad<br/> privilegiada</h3>
-                            <p className="text-gray-300 text-xl max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
                                 Su cercanía a Yerba Buena y conexión a través de la Ruta 339 aseguran un acceso rápido y conveniente.
                             </p>
                         </div>
@@ -117,15 +117,15 @@ export default function Ubicacion() {
 
                     {/* Segunda columna */}
                     <div className="space-y-6">
-                        <div className="h-[200px] flex flex-col">
+                        <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
                             <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Entorno<br/> exclusivo</h3>
-                            <p className="text-gray-300 text-xl max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
                                 Frente a una de las mejores canchas de golf de Tucumán, lo que suma un atractivo para los amantes de este deporte.
                             </p>
                         </div>
-                        <div className="h-[200px] flex flex-col">
+                        <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
                             <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Conexión con<br/> la naturaleza</h3>
-                            <p className="text-gray-300 text-xl max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
                                 Rodeado de un entorno residencial tranquilo y paisajes naturales al pie del cerro.
                             </p>
                         </div>

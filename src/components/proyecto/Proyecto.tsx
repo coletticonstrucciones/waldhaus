@@ -21,16 +21,16 @@ export default function Proyecto() {
                         className="w-full object-cover"
                     />
                 </div>
-                <article className="px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-base sm:text-lg font-extralight md:text-xl max-w-4xl mx-auto text-center">
-                    <p>
+                <article className="px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-base sm:text-lg font-light md:text-xl max-w-4xl mx-auto text-center">
+                    <p className='text-gray-300 text-lg md:text-xl w-full font-light leading-relaxed'>
                         Dos volúmenes simétricos de manera rotada y organizados por un eje central, dividen el terreno en áreas funcionales. Al sur, se encuentra el acceso peatonal y vehicular que conduce a un amplio estacionamiento subterráneo. Al norte, un espacio dedicado al esparcimiento con jardines y una piscina, crea un entorno relajado y armónico.
                     </p>
                     <br />
-                    <p>Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia austera y materiales de alta calidad.
+                    <p className='text-gray-300 text-lg md:text-xl w-full font-light leading-relaxed'>Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia austera y materiales de alta calidad.
                     </p>
                 </article>
                 {/* Contenido adicional */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12  w-full max-w-7xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12  w-full max-w-7xl mx-auto mt-12">
                     {/* Sección 1: Texto e Imagen */}
                     <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
                         <h2
@@ -82,7 +82,7 @@ export default function Proyecto() {
                         </p>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 my-8 sm:my-12 md:my-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 my-8 sm:my-12 md:my-16 max-w-7xl mx-auto">
                     {/* Tarjetas de imágenes */}
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
@@ -91,7 +91,7 @@ export default function Proyecto() {
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em]">vistas</p>
+                            <p className="text-white text-lg sm:text-xl md:text-2xl uppercase tracking-[.3em]">vistas</p>
                         </div>
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
@@ -101,7 +101,7 @@ export default function Proyecto() {
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em]">paisajismo</p>
+                            <p className="text-white text-lg sm:text-xl md:text-2xl uppercase tracking-[.3em]">paisajismo</p>
                         </div>
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
@@ -111,7 +111,7 @@ export default function Proyecto() {
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em]">gym & spa</p>
+                            <p className="text-white text-lg sm:text-xl md:text-2xl uppercase tracking-[.3em]">gym & spa</p>
                         </div>
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
@@ -121,7 +121,7 @@ export default function Proyecto() {
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em] text-center">
+                            <p className="text-white text-lg sm:text-xl md:text-2xl uppercase tracking-[.3em] text-center">
                                 estacionamiento<br />subterráneo
                             </p>
                         </div>
