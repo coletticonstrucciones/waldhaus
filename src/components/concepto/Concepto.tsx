@@ -298,59 +298,7 @@ export default function Concepto() {
                     </div>
                 </div>
 
-                {/* Contenido adicional */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 md:px-10  mx-auto">
-                    {/* Sección 1: Texto e Imagen */}
-                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
-                        <h2
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
-                        >
-                            about&nbsp;&nbsp;&nbsp;the
-                            <br />
-                            <span>view_</span>
-                        </h2>
-
-                        <p
-                            className=" md:text-[14.2px] leading-relaxed text-sm sm:text-base"
-
-                        >
-                            La naturaleza se despliega como un lienzo vivo. Waldhaus Residences se emplaza estratégicamente al pie del cerro, donde las montañas envuelven el día con su serenidad y belleza. Todas las unidades cuentan con balcones amplios y confortables para admirar estas vistas únicas.
-                        </p>
-                    </div>
-                    <div className="flex items-center mt-4 md:mt-0">
-                        <img
-                            src="/about-the-view.png"
-                            alt="Vista secundaria"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-
-                    {/* Sección 2: Imagen y Texto */}
-                    <div className="flex items-center order-2 md:order-1">
-                        <img
-                            src="about-the-services.png"
-                            alt="Servicios secundarios"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6 order-1 md:order-2">
-                        <h2
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
-                        >
-                            about&nbsp;&nbsp;&nbsp;the
-                            <br />
-                            <span>services_</span>
-                        </h2>
-                        <p
-                            className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
-
-                        >
-                            Waldhaus Residences redefine el concepto de vida Premium en el eje Yerba Buena-San Pablo. Con accesibilidad privilegiada, vistas abiertas y diseño superior, ofrece unidades luminosas con terrazas, áreas comunes exclusivas y materiales de alta calidad, ideales para quienes valoran la elegancia en los detalles.
-                        </p>
-                    </div>
-                </div>
+                
             </div>
         </section>
     );

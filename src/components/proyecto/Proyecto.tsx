@@ -29,45 +29,49 @@ export default function Proyecto() {
                     <p>Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia austera y materiales de alta calidad.
                     </p>
                 </article>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 sm:mt-12 md:mt-16 px-4 sm:px-8 md:px-12 lg:px-20">
-                    {/* Tarjetas de imágenes inferiores */}
-                    <div className="flex flex-col items-center sm:items-start">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 mt-8 sm:mt-12 md:mt-16">
+                    {/* Tarjetas de imágenes */}
+                    <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
                             src="/Proyecto/1.png"
                             alt="Vistas"
-                            className="w-full aspect-[25/37] object-cover"
+                            className="w-full h-full object-cover"
                         />
-                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">vistas</p>
+                        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em]">vistas</p>
+                        </div>
                     </div>
-                    <div className="flex flex-col items-center sm:items-start">
+                    <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
                             src="/Proyecto/2.png"
                             alt="Paisajismo"
-                            className="w-full aspect-[25/37] object-cover"
+                            className="w-full h-full object-cover"
                         />
-                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">
-                            paisajismo
-                        </p>
+                        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em]">paisajismo</p>
+                        </div>
                     </div>
-                    <div className="flex flex-col items-center sm:items-start">
+                    <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
                             src="/Proyecto/3.png"
                             alt="Gym & Spa"
-                            className="w-full aspect-[25/37] object-cover"
+                            className="w-full h-full object-cover"
                         />
-                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">gym & spa</p>
+                        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em]">gym & spa</p>
+                        </div>
                     </div>
-                    <div className="flex flex-col items-center sm:items-start">
+                    <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
                             src="/Proyecto/4.png"
                             alt="Estacionamiento Subterráneo"
-                            className="w-full aspect-[25/37] object-cover"
+                            className="w-full h-full object-cover"
                         />
-                        <p className="mt-4 text-xl sm:text-2xl md:text-3xl tracking-widest text-center w-full">
-                            estacionamiento
-                            <br />
-                            subterráneo
-                        </p>
+                        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <p className="text-white text-2xl sm:text-3xl md:text-4xl uppercase tracking-[.3em] text-center">
+                                estacionamiento<br />subterráneo
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

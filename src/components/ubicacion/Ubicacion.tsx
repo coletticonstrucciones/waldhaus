@@ -71,8 +71,35 @@ export default function Ubicacion() {
                     </div>
                 </div>
 
+                {/* Contenedor de mapa y plano */}
+                <div className="w-full max-w-7xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        {/* Mapa de Google */}
+                        <div className="aspect-[4/3] bg-gray-950 overflow-hidden">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.4024741001837!2d-65.22226!3d-26.82414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ5JzI3LjAiUyA2NcKwMTMnMjAuMiJX!5e0!3m2!1ses!2sar!4v1645564271058!5m2!1ses!2sar"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+
+                        {/* Plano de ruta */}
+                        <div className="aspect-[4/3] bg-gray-950 overflow-hidden">
+                            <img
+                                src="/ubicacion/ruta38.jpg"
+                                alt="Plano de ruta"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+
                 {/* Caja de texto */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 text-sm md:text-base text-gray-200 bg-black p-4 sm:p-6 md:p-7 shadow-lg max-w-5xl mx-auto mt-8 sm:mt-12 md:mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 text-sm md:text-base text-gray-200 bg-black p-4 sm:p-6 md:p-7 shadow-lg max-w-5xl mx-auto mt-8 sm:my-12 md:my-16">
                     {/* Primera columna */}
                     <div className="flex flex-col justify-between border-b md:border-b-0 md:border-r border-gray-600 pb-6 md:pb-0 md:pr-6 leading-relaxed text-sm sm:text-base font-extralight  md:text-[14.2px]">
                         <p className="mb-4 sm:mb-6 md:mb-8">
@@ -93,25 +120,61 @@ export default function Ubicacion() {
                         </p>
                     </div>
                 </div>
-            </div>
 
-            {/* Contenedor del video */}
-            <div className="relative z-10 bg-black pt-8 sm:pt-12 md:pt-16 pb-16">
-                <div className="relative w-full max-w-5xl mx-auto">
-                    {/* Contenedor del video con proporción 16:9 */}
-                    <div className="relative w-full h-0 pb-[56.25%]">
-                        <iframe
-                            className="absolute top-0 left-0 w-full h-full"
-                            src="https://www.youtube.com/embed/IevKmIL_NXw?autoplay=1&controls=1"
-                            title="YouTube video"
-                            allow="autoplay; fullscreen"
-                            allowFullScreen
-                        ></iframe>
+                {/* Contenido adicional */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12  w-full max-w-7xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+                    {/* Sección 1: Texto e Imagen */}
+                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
+                        <h2
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
+                        >
+                            about&nbsp;&nbsp;&nbsp;the
+                            <br />
+                            <span>view_</span>
+                        </h2>
+
+                        <p
+                            className=" md:text-[14.2px] leading-relaxed text-sm sm:text-base"
+
+                        >
+                            La naturaleza se despliega como un lienzo vivo. Waldhaus Residences se emplaza estratégicamente al pie del cerro, donde las montañas envuelven el día con su serenidad y belleza. Todas las unidades cuentan con balcones amplios y confortables para admirar estas vistas únicas.
+                        </p>
+                    </div>
+                    <div className="flex items-center mt-4 md:mt-0">
+                        <img
+                            src="/about-the-view.png"
+                            alt="Vista secundaria"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    {/* Sección 2: Imagen y Texto */}
+                    <div className="flex items-center order-2 md:order-1">
+                        <img
+                            src="about-the-services.png"
+                            alt="Servicios secundarios"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-col justify-between space-y-4 sm:space-y-6 order-1 md:order-2">
+                        <h2
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                            style={{ fontFamily: "'Helvetica Now', sans-serif" }}
+                        >
+                            about&nbsp;&nbsp;&nbsp;the
+                            <br />
+                            <span>services_</span>
+                        </h2>
+                        <p
+                            className="text-sm sm:text-base md:text-[14.2px] leading-relaxed"
+
+                        >
+                            Waldhaus Residences redefine el concepto de vida Premium en el eje Yerba Buena-San Pablo. Con accesibilidad privilegiada, vistas abiertas y diseño superior, ofrece unidades luminosas con terrazas, áreas comunes exclusivas y materiales de alta calidad, ideales para quienes valoran la elegancia en los detalles.
+                        </p>
                     </div>
                 </div>
             </div>
-
-
         </section>
     );
 }
