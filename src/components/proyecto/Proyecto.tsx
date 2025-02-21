@@ -22,11 +22,17 @@ export default function Proyecto() {
                     />
                 </div>
                 <article className="px-4 sm:px-8 md:px-12 lg:px-20 pb-12 sm:pb-16 md:pb-24 leading-relaxed text-base sm:text-lg font-light md:text-xl max-w-4xl mx-auto text-center">
-                    <p className='text-gray-300 text-lg md:text-xl w-full font-light leading-relaxed'>
+                    <p
+                        className='text-gray-300 text-lg md:text-xl w-full font-light leading-relaxed'
+                        style={{ lineHeight: "1.2" }}
+                    >
                         Dos volúmenes simétricos de manera rotada y organizados por un eje central, dividen el terreno en áreas funcionales. Al sur, se encuentra el acceso peatonal y vehicular que conduce a un amplio estacionamiento subterráneo. Al norte, un espacio dedicado al esparcimiento con jardines y una piscina, crea un entorno relajado y armónico.
                     </p>
                     <br />
-                    <p className='text-gray-300 text-lg md:text-xl w-full font-light leading-relaxed'>Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia austera y materiales de alta calidad.
+                    <p
+                        className='text-gray-300 text-lg md:text-xl w-full font-light leading-relaxed'
+                        style={{ lineHeight: "1.2" }}
+                    >Cada torre está rodeada de amplias terrazas con asadores privados, proporcionando un estilo de vida que combina confort y diseño superior. Waldhaus es el lugar ideal para quienes valoran la buena arquitectura, una elegancia austera y materiales de alta calidad.
                     </p>
                 </article>
                 {/* Contenido adicional */}
@@ -34,8 +40,7 @@ export default function Proyecto() {
                     {/* Sección 1: Texto e Imagen */}
                     <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
                         <h2
-                            className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter"
-                            style={{lineHeight: "0.8"}}
+                            className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}
                         >
                             about&nbsp;&nbsp;&nbsp;the
                             <br />
@@ -43,8 +48,8 @@ export default function Proyecto() {
                         </h2>
 
                         <p
-                            className="text-gray-300 text-xl font-light leading-relaxed"
-                            style={{lineHeight: "1.2"}}
+                            className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed"
+                            style={{ lineHeight: "1.2" }}
                         >
                             La naturaleza se despliega como un lienzo vivo. Waldhaus Residences se emplaza estratégicamente al pie del cerro, donde las montañas envuelven el día con su serenidad y belleza. Todas las unidades cuentan con balcones amplios y confortables para admirar estas vistas únicas.
                         </p>
@@ -67,16 +72,15 @@ export default function Proyecto() {
                     </div>
                     <div className="flex flex-col justify-between space-y-4 sm:space-y-6 order-1 md:order-2">
                         <h2
-                            className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter"
-                            style={{lineHeight: "0.8"}}
+                            className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}
                         >
                             about&nbsp;&nbsp;&nbsp;the
                             <br />
                             <span>services</span>
                         </h2>
                         <p
-                            className="text-gray-300 text-xl font-light leading-relaxed"
-                            style={{lineHeight: "1.2"}}
+                            className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed"
+                            style={{ lineHeight: "1.2" }}
                         >
                             Waldhaus Residences redefine el concepto de vida Premium en el eje Yerba Buena-San Pablo. Con accesibilidad privilegiada, vistas abiertas y diseño superior, ofrece unidades luminosas con terrazas, áreas comunes exclusivas y materiales de alta calidad, ideales para quienes valoran la elegancia en los detalles.
                         </p>
@@ -86,7 +90,7 @@ export default function Proyecto() {
                     {/* Tarjetas de imágenes */}
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
-                            src="/Proyecto/1.png"
+                            src="/Proyecto/1.jpg"
                             alt="Vistas"
                             className="w-full h-full object-cover"
                         />
@@ -96,7 +100,7 @@ export default function Proyecto() {
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
-                            src="/Proyecto/2.png"
+                            src="/Proyecto/2.jpg"
                             alt="Paisajismo"
                             className="w-full h-full object-cover"
                         />
@@ -106,7 +110,7 @@ export default function Proyecto() {
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
-                            src="/Proyecto/3.png"
+                            src="/Proyecto/3.jpg"
                             alt="Gym & Spa"
                             className="w-full h-full object-cover"
                         />
@@ -116,7 +120,7 @@ export default function Proyecto() {
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
-                            src="/Proyecto/4.png"
+                            src="/Proyecto/4.jpg"
                             alt="Estacionamiento Subterráneo"
                             className="w-full h-full object-cover"
                         />

@@ -5,6 +5,18 @@ import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 
+  /**
+   * Renders the Estudio page.
+   *
+   * This page displays a large image of the studio, followed by a section
+   * with some text and a grid of four images. The text describes the studio
+   * and the images show some of the projects the studio has worked on.
+   *
+   * The component uses the useInView hook to detect when the section is
+   * visible and animate the numbers in the text.
+   *
+   * @returns {JSX.Element} The Estudio page.
+   */
 export default function Estudio() {
   const { ref, inView } = useInView({
     threshold: 0.3,

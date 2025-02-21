@@ -77,10 +77,10 @@ export default function Ubicacion() {
                         {/* Mapa de Google */}
                         <div className="bg-gray-950 overflow-hidden">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3559.4814980540636!2d-65.313917!3d-26.8564392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1740082894451!5m2!1ses-419!2sar"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.4816493445132!2d-65.31649728846746!3d-26.856434390758462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942243f3eb2b2f61%3A0x39222d06f7764fe0!2sWaldhaus%20Residences%20%E2%80%A2%20Coletti!5e0!3m2!1ses!2sar!4v1740095776419!5m2!1ses!2sar"
                                 width="600"
                                 height="410"
-                                style={{ border: 0 }}
+                                style={{ border: 0, minWidth: "100%" }}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade">
                             </iframe>
@@ -98,18 +98,18 @@ export default function Ubicacion() {
                 </div>
 
                 {/* Caja de texto */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 text-white bg-black p-3 md:p-8 max-w-7xl mx-auto mt-8 sm:my-12 md:my-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 text-white bg-black  max-w-7xl mx-auto mt-8 sm:my-12 md:my-16">
                     {/* Primera columna */}
                     <div className="space-y-6">
                         <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
-                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Zona residencial<br/> en auge</h3>
-                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{ lineHeight: "0.8" }}>Zona residencial<br /> en auge</h3>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{ lineHeight: "1.2" }}>
                                 Forma parte de un área con gran potencial de desarrollo, ideal para un proyecto de vida.
                             </p>
                         </div>
                         <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
-                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Accesibilidad<br/> privilegiada</h3>
-                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{ lineHeight: "0.8" }}>Accesibilidad<br /> privilegiada</h3>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{ lineHeight: "1.2" }}>
                                 Su cercanía a Yerba Buena y conexión a través de la Ruta 339 aseguran un acceso rápido y conveniente.
                             </p>
                         </div>
@@ -118,14 +118,14 @@ export default function Ubicacion() {
                     {/* Segunda columna */}
                     <div className="space-y-6">
                         <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
-                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Entorno<br/> exclusivo</h3>
-                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{ lineHeight: "0.8" }}>Entorno<br /> exclusivo</h3>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{ lineHeight: "1.2" }}>
                                 Frente a una de las mejores canchas de golf de Tucumán, lo que suma un atractivo para los amantes de este deporte.
                             </p>
                         </div>
                         <div className="h-fit mb-10 md:mt-0 md:h-[200px] flex flex-col">
-                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{lineHeight: "0.8"}}>Conexión con<br/> la naturaleza</h3>
-                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{lineHeight: "1.2"}}>
+                            <h3 className="font-['Times_New_Roman'] font-bold text-2xl md:text-5xl mb-5 tracking-tighter" style={{ lineHeight: "0.8" }}>Conexión con<br /> la naturaleza</h3>
+                            <p className="text-gray-300 md:text-xl w-full md:max-w-[70%] font-light leading-relaxed" style={{ lineHeight: "1.2" }}>
                                 Rodeado de un entorno residencial tranquilo y paisajes naturales al pie del cerro.
                             </p>
                         </div>
