@@ -4,6 +4,7 @@ import Image from 'next/image'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
   /**
    * Renders the Estudio page.
@@ -24,9 +25,9 @@ export default function Estudio() {
   });
 
   const projects = [
-    { name: 'proyectos', image: '/Estudio/1.png' },
-    { name: 'el taller', image: '/Estudio/2.png' },
-    { name: 'historia', image: '/Estudio/4.jpg' }
+    { name: 'proyectos', image: '/Estudio/1.png', href: "https://coletti.com.ar/proyectos/" },
+    { name: 'el taller', image: '/Estudio/2.png', href: "https://coletti.com.ar" },
+    { name: 'historia', image: '/Estudio/4.jpg', href: "https://coletti.com.ar/la-empresa/" }
   ]
 
   return (
@@ -142,7 +143,7 @@ export default function Estudio() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 md:mt-16 max-w-5xl mx-auto">
             {projects.map((project) => (
-              <div key={project.name} className="flex flex-col items-center sm:items-start">
+              <Link href={project.href} key={project.name} className="flex flex-col items-center sm:items-start">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -151,7 +152,7 @@ export default function Estudio() {
                 <p className="mt-4 text-center w-full text-xl sm:text-2xl md:text-3xl tracking-widest">
                   {project.name}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

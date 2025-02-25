@@ -144,10 +144,10 @@ export default function Unidades() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
-    
+
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
@@ -214,10 +214,10 @@ export default function Unidades() {
   return (
     <section
       id="unidades"
-      className="relative  bg-black text-white overflow-hidden py-24 md:pt-0"
+      className="relative  bg-black text-white overflow-hidden pt-24 md:pt-0"
     >
       <h2
-        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] text-center pt-16 sm:pt-20 md:pt-28"
+        className="text-base sm:text-xl md:text-3xl uppercase tracking-[.3em] sm:tracking-[.4em] md:tracking-[.5em] text-center pt-0 sm:pt-20 md:pt-28"
         style={{
           fontFamily: "'Helvetica Now', sans-serif",
           color: "#FFFFFF",
@@ -227,23 +227,23 @@ export default function Unidades() {
       </h2>
 
       {/* Contenedor principal: alineado al centro y al fondo (bottom) */}
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-0 justify-center h-fit">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start gap-0 justify-center h-fit">
         {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
-        <div className="relative flex items-center justify-center w-full max-w-[780px] lg:scale-75 scale-[1.4] mt-8 lg:mt-[-100px]">
+        <div className="relative flex items-center justify-center w-full lg:w-1/2 max-w-[780px] lg:scale-75 scale-[1.4] mt-8 lg:mt-40 ">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="relative w-full aspect-[612.98/489.54] group"
           >
             {/* Efecto de glow */}
-            <div 
+            <div
               className="absolute inset-0 blur-[2px] opacity-50"
-              style={{ 
+              style={{
                 background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)',
                 transform: 'scale(0.78)',
               }}
             />
-            
+
             {/* Contenedor principal escalado */}
             <div className="absolute inset-0" style={{ transform: 'scale(0.585)', transformOrigin: 'center center' }}>
               {/* Imagen base que siempre se muestra */}
@@ -329,12 +329,12 @@ export default function Unidades() {
 
         {/* Unidad seleccionada en desktop */}
         {!isMobile && (
-          <div className="w-full max-w-3xl">
+          <div className="w-full lg:w-1/2 max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               key={selectedUnit.id}
-              className="relative aspect-[662/468] bg-transparent rounded-lg overflow-hidden mt-8 md:mt-[-100px]"
+              className="relative aspect-[662/468] bg-transparent rounded-lg overflow-hidden md:mt-20"
             >
               <Image
                 src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
@@ -384,9 +384,8 @@ export default function Unidades() {
                   alt={`Plano unidad ${selectedUnit.id}`}
                   width={662}
                   height={468}
-                  className={`w-full h-full object-contain transition-opacity duration-300 ${
-                    isLoading ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  className={`w-full h-full object-contain transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'
+                    }`}
                   onLoadingComplete={() => setIsLoading(false)}
                   onLoadStart={() => setIsLoading(true)}
                   priority
@@ -396,10 +395,10 @@ export default function Unidades() {
                     e.stopPropagation()
                     handleDownload()
                   }}
-                  className="absolute top-4 right-4 bg-black/80 hover:bg-black text-white rounded-full p-2.5 transition-all duration-300 backdrop-blur-sm group"
+                  className="absolute top-6 right-4 bg-black/80 hover:bg-black text-white rounded-full p-2.5 transition-all duration-300 backdrop-blur-sm group"
                   aria-label="Descargar plano"
                 >
-                  <ArrowDownTrayIcon className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
+                  <ArrowDownTrayIcon className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300" />
                 </button>
               </div>
             </motion.div>
