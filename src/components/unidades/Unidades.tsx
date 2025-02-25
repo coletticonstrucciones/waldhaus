@@ -229,7 +229,7 @@ export default function Unidades() {
       {/* Contenedor principal: alineado al centro y al fondo (bottom) */}
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-0 justify-center h-fit">
         {/* ---------------- PLANO PRINCIPAL (SVG) ---------------- */}
-        <div className="relative flex items-center justify-center w-full max-w-[780px] lg:scale-75 scale-[1.4] mt-8 lg:mt-0">
+        <div className="relative flex items-center justify-center w-full max-w-[780px] lg:scale-75 scale-[1.4] mt-8 lg:mt-[-100px]">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -334,7 +334,7 @@ export default function Unidades() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               key={selectedUnit.id}
-              className="relative aspect-[662/468] bg-transparent rounded-lg overflow-hidden"
+              className="relative aspect-[662/468] bg-transparent rounded-lg overflow-hidden mt-8 md:mt-[-100px]"
             >
               <Image
                 src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
@@ -378,7 +378,7 @@ export default function Unidades() {
                   <div className="w-12 h-12 border-4 border-neutral-600 border-t-white rounded-full animate-spin"></div>
                 </div>
               )}
-              <div className="relative aspect-[662/468]">
+              <div className="relative aspect-[429/343]">
                 <Image
                   src={`/unidades/${unitToImageMap[selectedUnit.id]}`}
                   alt={`Plano unidad ${selectedUnit.id}`}
