@@ -26,8 +26,7 @@ export default function Estudio() {
   const projects = [
     { name: 'proyectos', image: '/Estudio/1.png' },
     { name: 'el taller', image: '/Estudio/2.png' },
-    { name: 'visión', image: '/Estudio/3.png' },
-    { name: 'historia', image: '/Estudio/4.png' }
+    { name: 'historia', image: '/Estudio/4.jpg' }
   ]
 
   return (
@@ -141,7 +140,7 @@ export default function Estudio() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-8 sm:mt-12 md:mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12 md:mt-16 max-w-5xl mx-auto">
             {projects.map((project) => (
               <div key={project.name} className="flex flex-col items-center sm:items-start">
                 <img

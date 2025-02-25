@@ -111,11 +111,11 @@ export default function Proyecto() {
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">
                         <img
                             src="/Proyecto/3.jpg"
-                            alt="Gym & Spa"
+                            alt="Sum & Coworking"
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <p className="text-white text-lg sm:text-xl md:text-2xl uppercase tracking-[.3em]">gym & spa</p>
+                            <p className="text-white text-lg sm:text-xl md:text-2xl uppercase tracking-[.3em]">sum & coworking</p>
                         </div>
                     </div>
                     <div className="relative group h-[50vh] sm:h-[60vh] md:h-[70vh]">

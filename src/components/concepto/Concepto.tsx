@@ -153,7 +153,7 @@ export default function Concepto() {
                             fontFamily: 'Times New Roman, serif',
                         }}
                     >
-                        Elegancia&nbsp;&nbsp;austera
+                        Balance&nbsp;&nbsp;perfecto
                     </h3>
                 </div>
 
