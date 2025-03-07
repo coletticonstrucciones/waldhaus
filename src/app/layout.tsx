@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   creator: "Waldhaus",
   publisher: "Waldhaus",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://waldhaus.ar",
+  },
   openGraph: {
     title: "Waldhaus | Estudio de Arquitectura",
     description: "Estudio de arquitectura especializado en diseño sostenible y contemporáneo",
@@ -38,6 +41,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "google-site-verification=wzace8cf1tXdOx0UP3bNCGOyclNnwUkqDkkrKzzRDj8", 
+  },
+  category: "real estate",
 };
 
 export default function RootLayout({
@@ -46,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
