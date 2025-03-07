@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 
@@ -17,55 +19,74 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
             {/* Desktop Navigation */}
-            <nav className={`hidden md:block fixed top-0 left-0 w-full py-8 z-[60] font-sans transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : ''}`}>
-                <ul className="flex max-w-7xl mx-auto justify-center gap-10 uppercase">
-                    {navItems.map((item) => (
-                        <li key={item.name} className="relative text-white text-lg cursor-pointer">
-                            <Link
-                                to={item.href}
-                                spy={true}
-                                smooth={true}
-                                offset={-80}
-                                duration={1000}
-                                className="relative group"
-                                activeClass="text-gray-300"
-                            >
-                                {/* Texto del ítem */}
-                                <span className="hover:text-gray-300 transition-colors duration-200">
-                                    {item.name}
-                                </span>
+            <nav className={`hidden md:block fixed top-0 left-0 w-full py-4 z-[60] font-sans transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-0' : ''}`}>
+                <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+                    <div className="w-48">
+                        <Image
+                            src='/colleti-logo.png'
+                            width={150}
+                            height={150}
+                            alt='Logo'
+                        />
+                    </div>
+                    <div className="flex-1 flex justify-center">
+                        <ul className="flex justify-center items-center gap-10 uppercase">
+                            {navItems.map((item) => (
+                                <li key={item.name} className="relative text-white text-lg cursor-pointer">
+                                    <Link
+                                        to={item.href}
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-80}
+                                        duration={1000}
+                                        className="relative group"
+                                        activeClass="text-gray-300"
+                                    >
+                                        {/* Texto del ítem */}
+                                        <span className="hover:text-gray-300 transition-colors duration-200">
+                                            {item.name}
+                                        </span>
 
-                                {/* Efecto de resplandor */}
-                                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-125 bg-white blur-xl transition-all duration-300"></span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                                        {/* Efecto de resplandor */}
+                                        <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-125 bg-white blur-xl transition-all duration-300"></span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="w-48"></div> {/* Empty div for balance */}
+                </div>
             </nav>
 
             {/* Mobile Navigation Button */}
             <motion.button
-                className={`md:hidden fixed right-6 z-[70] w-10 h-10 flex flex-col justify-center items-center rounded-full transition-all duration-300 ${
-                    scrolled 
-                    ? 'top-8 bg-black/80 backdrop-blur-md' 
+                className={`md:hidden fixed right-6 z-[70] w-10 h-10 flex flex-col justify-center items-center rounded-full transition-all duration-300 ${scrolled
+                    ? 'top-8 bg-black/80 backdrop-blur-md'
                     : 'top-4 bg-black'
-                }`}
+                    }`}
                 onClick={toggleMenu}
                 initial={false}
                 animate={isOpen ? "open" : "closed"}
@@ -110,16 +131,15 @@ export default function Navbar() {
                             className="fixed md:hidden inset-0 bg-black/60 backdrop-blur-sm z-30"
                             onClick={() => setIsOpen(false)}
                         />
-                        
+
                         {/* Drawer */}
                         <motion.div
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "tween", duration: 0.3 }}
-                            className={`fixed md:hidden top-0 right-0 w-full sm:w-80 h-full z-40 flex items-center justify-center ${
-                                scrolled ? 'bg-black/95 backdrop-blur-md' : 'bg-black'
-                            }`}
+                            className={`fixed md:hidden top-0 right-0 w-full sm:w-80 h-full z-40 flex items-center justify-center ${scrolled ? 'bg-black/95 backdrop-blur-md' : 'bg-black'
+                                }`}
                         >
                             <motion.ul
                                 className="flex flex-col items-center gap-8 uppercase w-full px-8"
