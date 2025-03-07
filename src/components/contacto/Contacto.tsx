@@ -80,7 +80,7 @@ export default function Contacto() {
           </div>
           
           <div className="mt-12 text-center text-[10px] sm:text-xs text-white/60">
-            <p>&copy; 2025 <a target="_blank" href="https://www.instagram.com/insiders.agencia/" className="hover:text-white transition-colors">Insiders</a>. All rights reserved. | Designed and developed by <a className="hover:text-white transition-colors" target="_blank" href="https://www.instagram.com/insiders.agencia/">Insiders</a> &amp; <a className="hover:text-white transition-colors" target="_blank" href="https://mvdev.vercel.app/">MVDev</a></p>
+            <p>&copy; 2025 <a target="_blank" href="https://www.instagram.com/insiders.agencia/" className="hover:text-white transition-colors">Insiders</a>. All rights reserved. | Designed and developed by <a className="hover:text-white transition-colors" target="_blank" href="https://www.instagram.com/insiders.agencia/">Insiders</a> &amp; <a className="hover:text-white transition-colors" target="_blank" href="https://www.m25.com.ar/">MVDev</a></p>
           </div>
         </div>
       </div>
