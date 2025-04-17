@@ -14,9 +14,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
 export const metadata: Metadata = {
-  title: "Waldhaus",
-  description: "Estudio de arquitectura especializado en diseño sostenible y contemporáneo. Transformamos espacios con un enfoque innovador y respetuoso con el medio ambiente.",
+  title: "COLETTI | Waldhaus Residences | San Pablo - Tucumán",
+  description: "Nuevo emprendimiento residencial linea Premium",
   keywords: ["arquitectura", "diseño sostenible", "estudio de arquitectura", "diseño contemporáneo", "proyectos arquitectónicos"],
   authors: [{ name: "Waldhaus" }],
   creator: "Waldhaus",
