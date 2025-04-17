@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     canonical: "https://waldhaus.ar",
   },
   openGraph: {
-    title: "Waldhaus | Estudio de Arquitectura",
-    description: "Estudio de arquitectura especializado en diseño sostenible y contemporáneo",
+    title: "COLETTI | Waldhaus Residences | San Pablo - Tucumán",
+    description: "Nuevo emprendimiento residencial linea Premium",
     url: "https://waldhaus.com",
     siteName: "Waldhaus",
     locale: "es_ES",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waldhaus | Estudio de Arquitectura",
-    description: "Estudio de arquitectura especializado en diseño sostenible y contemporáneo",
+    title: "COLETTI | Waldhaus Residences | San Pablo - Tucumán",
+    description: "Nuevo emprendimiento residencial linea Premium",
   },
   icons: {
     icon: "/favicon.ico",
